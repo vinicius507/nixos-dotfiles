@@ -1,2 +1,3 @@
-# nixos-desktop
-NixOS configuration for my Desktop.
+# nixos-dotfiles
+
+My personal dotfiles, packaged and managed using NixOS.
