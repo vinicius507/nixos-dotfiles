@@ -21,6 +21,7 @@
   home-manager.useUserPackages = true;
   home-manager.users.vini.imports = [
     outputs.homeManagerModules.base
+    outputs.homeManagerModules.cli
   ];
 
   programs.fish.enable = true;

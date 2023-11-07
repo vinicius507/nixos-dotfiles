@@ -4,4 +4,9 @@
     home.homeDirectory = "/home/vini";
     home.stateVersion = "23.05";
   };
+  cli = {...}: {
+    imports = [
+      ./cli/direnv.nix
+    ];
+  };
 }
