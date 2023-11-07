@@ -7,6 +7,7 @@
   cli = {...}: {
     imports = [
       ./cli/direnv.nix
+      ./cli/fish.nix
       ./cli/git.nix
     ];
   };

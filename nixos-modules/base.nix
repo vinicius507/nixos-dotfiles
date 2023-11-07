@@ -2,6 +2,7 @@
   inputs,
   outputs,
   lib,
+  pkgs,
   ...
 }: {
   imports = [
@@ -14,6 +15,7 @@
   users.users.vini = {
     isNormalUser = true;
     initialPassword = "changeme";
+    shell = pkgs.fish;
     extraGroups = ["wheel"];
   };
 
