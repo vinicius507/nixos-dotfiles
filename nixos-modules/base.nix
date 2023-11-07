@@ -19,6 +19,8 @@
   i18n.defaultLocale = "pt_BR.UTF-8";
   i18n.extraLocaleSettings.LC_MESSAGES = "en_US.UTF-8";
 
+  time.timeZone = "America/Sao_Paulo";
+
   nix.gc.automatic = true;
   nix.gc.dates = "weekly";
   nix.gc.options = "--delete-older-than 2d";
