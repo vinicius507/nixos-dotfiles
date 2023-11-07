@@ -1,8 +1,13 @@
 {
   inputs,
+  outputs,
   lib,
   ...
 }: {
+  imports = [
+    inputs.home-manager.nixosModules.home-manager
+  ];
+
   networking.firewall.enable = true;
   networking.networkmanager.enable = true;
 
@@ -11,6 +16,12 @@
     initialPassword = "changeme";
     extraGroups = ["wheel"];
   };
+
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+  home-manager.users.vini.imports = [
+    outputs.homeManagerModules.base
+  ];
 
   programs.fish.enable = true;
   security.sudo.wheelNeedsPassword = false;

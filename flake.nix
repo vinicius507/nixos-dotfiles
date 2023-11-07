@@ -1,11 +1,14 @@
 {
   inputs = {
     nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/*.tar.gz";
+    home-manager.url = "https://flakehub.com/f/nix-community/home-manager/*.tar.gz";
   };
   outputs = {
     self,
     nixpkgs,
+    home-manager,
   } @ inputs: let
+    inherit (self) outputs;
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
   in {
@@ -20,9 +23,10 @@
           self.nixosModules.base
           self.nixosModules.vm
         ];
-        specialArgs = {inherit inputs;};
+        specialArgs = {inherit inputs outputs;};
       };
     };
+    homeManagerModules = import ./hm-modules;
     devShells.${system}.default = pkgs.mkShell {
       packages = with pkgs; [
         nix
