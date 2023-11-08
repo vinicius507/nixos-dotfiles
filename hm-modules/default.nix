@@ -8,6 +8,7 @@
     imports = [
       ./cli/direnv.nix
       ./cli/fish.nix
+      ./cli/starship.nix
       ./cli/git.nix
     ];
   };
