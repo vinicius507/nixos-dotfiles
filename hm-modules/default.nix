@@ -6,6 +6,7 @@
   };
   cli = {pkgs, ...}: {
     imports = [
+      ./cli/bat.nix
       ./cli/direnv.nix
       ./cli/fish.nix
       ./cli/starship.nix
