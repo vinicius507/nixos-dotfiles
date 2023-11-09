@@ -11,6 +11,7 @@
       ./cli/fish.nix
       ./cli/starship.nix
       ./cli/git.nix
+      ./cli/zellij.nix
     ];
 
     home.packages = with pkgs; [
