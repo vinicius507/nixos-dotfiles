@@ -10,6 +10,7 @@
         "$git_branch"
         "$git_state"
         "$git_status"
+        "$jobs"
         "$cmd_duration"
         "$line_break"
         "$custom"
@@ -34,9 +35,15 @@
         format = "\([$state( $progress_current/$progress_total)]($style)\) ";
         style = "bright-black";
       };
+      jobs = {
+        number_threshold = 1;
+        format = "[$symbol $number]($style) ";
+        symbol = "";
+        style = "bold purple";
+      };
       cmd_duration = {
-        format = "[$duration]($style) ";
-        style = "yellow";
+        format = "[󰥔 $duration]($style) ";
+        style = "bold bright-red";
       };
       custom.direnv = {
         format = "[󰉋 direnv]($style) ";
