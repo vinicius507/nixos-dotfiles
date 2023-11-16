@@ -10,15 +10,26 @@
   } @ inputs: let
     inherit (self) outputs;
     system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
+    pkgs = import nixpkgs {
+      inherit system;
+      overlays = builtins.attrValues self.overlays;
+    };
   in {
     packages.${system} = {
       nixosVm = self.nixosConfigurations.nixosVm.config.system.build.vm;
+      nvchad = import ./pkgs/nvchad {
+        inherit (pkgs) lib stdenv fetchFromGitHub;
+      };
+    };
+    overlays = {
+      nvchad = final: prev: {
+        nvchad = self.packages.${final.system}.nvchad;
+      };
     };
     nixosModules = import ./nixos-modules;
     nixosConfigurations = {
       nixosVm = nixpkgs.lib.nixosSystem {
-        inherit system;
+        inherit system pkgs;
         modules = [
           self.nixosModules.base
           self.nixosModules.vm

@@ -21,10 +21,20 @@
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-  home-manager.users.vini.imports = [
-    outputs.homeManagerModules.base
-    outputs.homeManagerModules.cli
-  ];
+  home-manager.users.vini = {
+    imports = [
+      outputs.homeManagerModules.base
+      outputs.homeManagerModules.cli
+      outputs.homeManagerModules.nvchad
+    ];
+    programs.nvchad = {
+      enable = true;
+      settings = {
+        ui.theme = "catppuccin";
+        ui.transparency = true;
+      };
+    };
+  };
 
   programs.fish.enable = true;
   security.sudo.wheelNeedsPassword = false;

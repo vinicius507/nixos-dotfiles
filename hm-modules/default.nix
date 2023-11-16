@@ -21,4 +21,5 @@
       tree
     ];
   };
+  nvchad = import ./nvchad;
 }
