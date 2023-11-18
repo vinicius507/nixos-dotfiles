@@ -40,6 +40,7 @@
         inherit system pkgs;
         modules = [
           self.nixosModules.base
+          self.nixosModules.hyprland
           self.nixosModules.vm
         ];
         specialArgs = {inherit inputs outputs;};

@@ -13,13 +13,22 @@
       ./cli/git.nix
       ./cli/zellij.nix
     ];
-
     home.packages = with pkgs; [
       fd
       ripgrep
       tldr
       tree
     ];
+  };
+  hyprland = {pkgs, ...}: {
+    imports = [
+      ./hyprland/config.nix
+    ];
+    home.packages = with pkgs; [
+      pcmanfm
+    ];
+    programs.wezterm.enable = true;
+    wayland.windowManager.hyprland.enable = true;
   };
   nvchad = import ./nvchad;
 }

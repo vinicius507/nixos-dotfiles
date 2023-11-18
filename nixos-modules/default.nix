@@ -1,5 +1,6 @@
 {
   base = import ./base.nix;
+  hyprland = import ./hyprland.nix;
   vm = {
     virtualisation.vmVariant = {
       virtualisation.cores = 2;
