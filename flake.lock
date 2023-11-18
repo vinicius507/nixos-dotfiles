@@ -200,6 +200,20 @@
         "type": "github"
       }
     },
+    "nixos-hardware": {
+      "locked": {
+        "lastModified": 1700315735,
+        "narHash": "sha256-zlSLW6dX5XwBEwN87CIVtMr8zDSKvTRFmWmIQ9FfWgo=",
+        "rev": "1721da31f9b30cbf4460c4ec5068b3b6174a4694",
+        "revCount": 1464,
+        "type": "tarball",
+        "url": "https://api.flakehub.com/f/pinned/NixOS/nixos-hardware/0.1.1464%2Brev-1721da31f9b30cbf4460c4ec5068b3b6174a4694/018be2b7-ef0f-7dcc-b86b-75926b4e0e98/source.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://flakehub.com/f/NixOS/nixos-hardware/0.1.1464.tar.gz"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1700204040,
@@ -249,6 +263,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "stylix": "stylix"
       }

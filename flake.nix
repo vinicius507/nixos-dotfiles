@@ -3,6 +3,7 @@
     # TODO: update to latest stable when 23.11 launches
     nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1.0.tar.gz";
     home-manager.url = "https://flakehub.com/f/nix-community/home-manager/0.1.0.tar.gz";
+    nixos-hardware.url = "https://flakehub.com/f/NixOS/nixos-hardware/0.1.1464.tar.gz";
     stylix.url = "https://flakehub.com/f/danth/stylix/0.1.269.tar.gz";
   };
   outputs = {
@@ -17,6 +18,12 @@
       inherit system;
       overlays = builtins.attrValues self.overlays;
     };
+    mkHost = modules:
+      nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [self.nixosModules.base] ++ modules;
+        specialArgs = {inherit inputs outputs;};
+      };
   in {
     packages.${system} = import ./pkgs {inherit outputs pkgs;};
     overlays = {
@@ -30,15 +37,8 @@
     };
     nixosModules = import ./nixos-modules;
     nixosConfigurations = {
-      nixosVm = nixpkgs.lib.nixosSystem {
-        inherit system pkgs;
-        modules = [
-          self.nixosModules.base
-          self.nixosModules.hyprland
-          self.nixosModules.vm
-        ];
-        specialArgs = {inherit inputs outputs;};
-      };
+      desktop = mkHost [./hosts/desktop self.nixosModules.hyprland];
+      nixosVm = mkHost [self.nixosModules.hyprland self.nixosModules.vm];
     };
     homeManagerModules = import ./hm-modules;
     devShells.${system}.default = pkgs.mkShell {
