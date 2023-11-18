@@ -1,4 +1,10 @@
-{pkgs, ...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: let
+  inherit (pkgs.waylandUtils) screenshot;
+in {
   imports = [
     ./gtk.nix
     ./wezterm.nix
@@ -99,6 +105,8 @@
         "$mod SHIFT, S, movetoworkspace, special"
         "$mod, mouse_down, workspace, e+1"
         "$mod, mouse_up, workspace, e-1"
+        ", Print, exec, ${lib.getExe screenshot} section"
+        "SHIFT, Print, exec, ${lib.getExe screenshot} full"
         "$mod, R, submap, resize"
       ];
       bindm = [
