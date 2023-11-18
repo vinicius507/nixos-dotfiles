@@ -28,6 +28,10 @@
       outputs.homeManagerModules.cli
       outputs.homeManagerModules.nvchad
     ];
+    home.sessionVariables = {
+      BROWSER = "google-chrome-stable";
+      EDITOR = "nvim";
+    };
     programs.nvchad = {
       enable = true;
       settings = {
