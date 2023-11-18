@@ -1,5 +1,6 @@
 {
   inputs,
+  outputs,
   pkgs,
   ...
 }: {
@@ -38,6 +39,10 @@
 
   hardware.bluetooth.enable = true;
   hardware.pulseaudio.enable = false;
+
+  home-manager.users.vini.imports = [
+    outputs.homeManagerModules.vscode
+  ];
 
   services.pipewire = {
     enable = true;

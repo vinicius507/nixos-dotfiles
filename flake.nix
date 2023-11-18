@@ -37,8 +37,14 @@
     };
     nixosModules = import ./nixos-modules;
     nixosConfigurations = {
-      desktop = mkHost [./hosts/desktop self.nixosModules.hyprland];
-      nixosVm = mkHost [self.nixosModules.hyprland self.nixosModules.vm];
+      desktop = mkHost [
+        ./hosts/desktop
+        self.nixosModules.hyprland
+      ];
+      nixosVm = mkHost [
+        self.nixosModules.hyprland
+        self.nixosModules.vm
+      ];
     };
     homeManagerModules = import ./hm-modules;
     devShells.${system}.default = pkgs.mkShell {
