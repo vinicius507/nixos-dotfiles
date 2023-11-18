@@ -26,6 +26,7 @@
   };
 
   networking.hostName = "desktop";
+  services.tailscale.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
@@ -57,6 +58,5 @@
     pulse.enable = true;
     jack.enable = true;
   };
-
   security.rtkit.enable = true;
 }
