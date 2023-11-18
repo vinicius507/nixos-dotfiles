@@ -10,8 +10,9 @@
       ./cli/direnv.nix
       ./cli/eza.nix
       ./cli/fish.nix
-      ./cli/starship.nix
       ./cli/git.nix
+      ./cli/helix.nix
+      ./cli/starship.nix
       ./cli/zellij.nix
     ];
     home.packages = with pkgs; [
