@@ -42,7 +42,6 @@
   };
 
   programs.fish.enable = true;
-  security.sudo.wheelNeedsPassword = false;
 
   i18n.defaultLocale = "pt_BR.UTF-8";
   i18n.extraLocaleSettings.LC_MESSAGES = "en_US.UTF-8";
