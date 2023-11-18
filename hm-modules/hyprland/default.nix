@@ -67,6 +67,7 @@ in {
         ];
       };
       dwindle = {
+        no_gaps_when_only = 1;
         pseudotile = true;
         preserve_split = true;
       };
