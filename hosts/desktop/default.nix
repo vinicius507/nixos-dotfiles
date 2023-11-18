@@ -49,6 +49,8 @@
     services.mpris-proxy.enable = true;
   };
 
+  programs.steam.enable = true;
+
   services.pipewire = {
     enable = true;
     alsa = {
