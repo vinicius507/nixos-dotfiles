@@ -118,7 +118,6 @@ in {
         "$mod, mouse_up, workspace, e-1"
         ", Print, exec, ${lib.getExe screenshot} section"
         "SHIFT, Print, exec, ${lib.getExe screenshot} full"
-        "$mod, R, submap, resize"
       ];
       bindm = [
         "$mod, mouse:272, movewindow"
