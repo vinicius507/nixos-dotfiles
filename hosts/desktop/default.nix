@@ -45,7 +45,7 @@
       outputs.homeManagerModules.vscode
     ];
     services.mpris-proxy.enable = true;
-  }
+  };
 
   services.pipewire = {
     enable = true;
