@@ -1,5 +1,10 @@
-{
+{pkgs, ...}: {
+  imports = [
+    ./gtk.nix
+    ./wezterm.nix
+  ];
   wayland.windowManager.hyprland = {
+    enable = true;
     settings = {
       input = {
         kb_layout = "br";

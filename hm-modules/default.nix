@@ -20,16 +20,6 @@
       tree
     ];
   };
-  hyprland = {pkgs, ...}: {
-    imports = [
-      ./hyprland/config.nix
-      ./hyprland/gtk.nix
-    ];
-    home.packages = with pkgs; [
-      pcmanfm
-    ];
-    programs.wezterm.enable = true;
-    wayland.windowManager.hyprland.enable = true;
-  };
+  hyprland = import ./hyprland;
   nvchad = import ./nvchad;
 }
