@@ -38,7 +38,6 @@
 
   programs.fish.enable = true;
   security.sudo.wheelNeedsPassword = false;
-  services.getty.autologinUser = "vini";
 
   i18n.defaultLocale = "pt_BR.UTF-8";
   i18n.extraLocaleSettings.LC_MESSAGES = "en_US.UTF-8";
@@ -62,7 +61,6 @@
       "vinicius507.cachix.org-1:cWsivfWENRKZ19obQM96XtSKha88BEuQWQt+qEFFnYE="
     ];
   };
-
 
   system.stateVersion = "23.11";
 }
