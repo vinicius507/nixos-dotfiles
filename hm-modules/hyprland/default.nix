@@ -9,6 +9,7 @@ in {
   imports = [
     ./gtk.nix
     ./mako.nix
+    ./rofi.nix
     ./waybar.nix
     ./wezterm.nix
   ];
@@ -76,6 +77,7 @@ in {
       ];
       "$mod" = "ALT";
       bind = [
+        "$mod, Space, exec, rofi -show drun"
         "$mod, Return, exec, wezterm"
         "$mod SHIFT, Return, exec, [float] wezterm start --always-new-process"
         "$mod SHIFT, C, killactive,"
