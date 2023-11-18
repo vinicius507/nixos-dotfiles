@@ -23,6 +23,7 @@
   hyprland = {pkgs, ...}: {
     imports = [
       ./hyprland/config.nix
+      ./hyprland/gtk.nix
     ];
     home.packages = with pkgs; [
       pcmanfm
