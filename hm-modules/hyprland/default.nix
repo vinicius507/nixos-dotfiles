@@ -76,7 +76,7 @@ in {
       windowrulev2 = [
         "float,class:^(pcmanfm)$"
       ];
-      "$mod" = "ALT";
+      "$mod" = "SUPER";
       bind = [
         "$mod, Space, exec, rofi -show drun"
         "$mod, Return, exec, wezterm"
