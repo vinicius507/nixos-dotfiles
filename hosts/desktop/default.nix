@@ -40,11 +40,13 @@
   hardware.bluetooth.enable = true;
   hardware.pulseaudio.enable = false;
 
-  home-manager.users.vini.imports = [
-    outputs.homeManagerModules.vscode
-  ];
+  home-manager.users.vini = {
+    imports = [
+      outputs.homeManagerModules.vscode
+    ];
+    services.mpris-proxy.enable = true;
+  }
 
-  services.mpris-proxy.enable = true;
   services.pipewire = {
     enable = true;
     alsa = {
