@@ -1,4 +1,5 @@
 {
+  config,
   lib,
   pkgs,
   ...
@@ -23,6 +24,9 @@ in {
         border_size = 2;
         layout = "dwindle";
       };
+      exec-once = [
+        "${lib.getExe pkgs.swaybg} -m fill -i ${config.stylix.image}"
+      ];
       decoration = {
         blur = {
           enabled = true;

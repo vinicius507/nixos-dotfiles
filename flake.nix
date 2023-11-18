@@ -3,11 +3,13 @@
     # TODO: update to latest stable when 23.11 launches
     nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1.0.tar.gz";
     home-manager.url = "https://flakehub.com/f/nix-community/home-manager/0.1.0.tar.gz";
+    stylix.url = "https://flakehub.com/f/danth/stylix/0.1.269.tar.gz";
   };
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    ...
   } @ inputs: let
     inherit (self) outputs;
     system = "x86_64-linux";

@@ -7,6 +7,7 @@
 }: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
+    inputs.stylix.nixosModules.stylix
   ];
 
   networking.firewall.enable = true;
@@ -60,6 +61,39 @@
     extra-trusted-public-keys = [
       "vinicius507.cachix.org-1:cWsivfWENRKZ19obQM96XtSKha88BEuQWQt+qEFFnYE="
     ];
+  };
+
+  stylix = {
+    polarity = "dark";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    image = builtins.fetchurl {
+      url = "https://cdn.discordapp.com/attachments/635625973764849684/1113554221653037127/1_pexels-elijah-odonnell-4173624.jpg";
+      sha256 = "0dhd16r6npar8rb7y3xddb7prs5c1mi8ssplkngsaqrmyip683gm";
+    };
+    opacity.popups = 0.8;
+    opacity.terminal = 0.8;
+    cursor = {
+      name = "Catppuccin-Mocha-Dark-Cursors";
+      package = pkgs.catppuccin-cursors.mochaDark;
+    };
+    fonts = {
+      emoji = {
+        name = "Twitter Color Emoji";
+        package = pkgs.twitter-color-emoji;
+      };
+      monospace = {
+        name = "JetBrains Mono Nerd Font";
+        package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
+      };
+      sansSerif = {
+        name = "Roboto";
+        package = pkgs.roboto;
+      };
+      serif = {
+        name = "Roboto Slab";
+        package = pkgs.roboto-slab;
+      };
+    };
   };
 
   system.stateVersion = "23.11";
