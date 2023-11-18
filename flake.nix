@@ -1,7 +1,8 @@
 {
   inputs = {
-    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/*.tar.gz";
-    home-manager.url = "https://flakehub.com/f/nix-community/home-manager/*.tar.gz";
+    # TODO: update to latest stable when 23.11 launches
+    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1.0.tar.gz";
+    home-manager.url = "https://flakehub.com/f/nix-community/home-manager/0.1.0.tar.gz";
   };
   outputs = {
     self,
