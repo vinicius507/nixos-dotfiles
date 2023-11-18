@@ -8,6 +8,7 @@
 in {
   imports = [
     ./gtk.nix
+    ./waybar.nix
     ./wezterm.nix
   ];
   wayland.windowManager.hyprland = {
@@ -26,6 +27,7 @@ in {
       };
       exec-once = [
         "${lib.getExe pkgs.swaybg} -m fill -i ${config.stylix.image}"
+        "${lib.getExe pkgs.waybar}"
       ];
       decoration = {
         blur = {

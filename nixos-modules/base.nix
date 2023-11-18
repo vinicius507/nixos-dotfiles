@@ -70,8 +70,11 @@
       url = "https://cdn.discordapp.com/attachments/635625973764849684/1113554221653037127/1_pexels-elijah-odonnell-4173624.jpg";
       sha256 = "0dhd16r6npar8rb7y3xddb7prs5c1mi8ssplkngsaqrmyip683gm";
     };
-    opacity.popups = 0.8;
-    opacity.terminal = 0.8;
+    opacity = {
+      desktop = 0.6;
+      popups = 0.8;
+      terminal = 0.8;
+    };
     cursor = {
       name = "Catppuccin-Mocha-Dark-Cursors";
       package = pkgs.catppuccin-cursors.mochaDark;
