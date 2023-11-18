@@ -71,12 +71,12 @@ in {
         color: ${hex colors.base05};
       }
 
-      #workspaces button.active {
-        color: ${hex colors.base0B};
+      #workspaces button.empty {
+        color: ${hex colors.base03};
       }
 
-      #workspaces button.persistent {
-        color: ${hex colors.base03};
+      #workspaces button.active {
+        color: ${hex colors.base0B};
       }
 
       #pulseaudio.muted {
