@@ -44,6 +44,7 @@
     outputs.homeManagerModules.vscode
   ];
 
+  services.mpris-proxy.enable = true;
   services.pipewire = {
     enable = true;
     alsa = {
@@ -53,5 +54,6 @@
     pulse.enable = true;
     jack.enable = true;
   };
+
   security.rtkit.enable = true;
 }
