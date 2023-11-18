@@ -8,6 +8,7 @@
 in {
   imports = [
     ./gtk.nix
+    ./mako.nix
     ./waybar.nix
     ./wezterm.nix
   ];
@@ -26,6 +27,7 @@ in {
         layout = "dwindle";
       };
       exec-once = [
+        "${pkgs.mako}/bin/mako"
         "${lib.getExe pkgs.swaybg} -m fill -i ${config.stylix.image}"
         "${lib.getExe pkgs.waybar}"
       ];
