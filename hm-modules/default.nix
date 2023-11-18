@@ -8,6 +8,7 @@
     imports = [
       ./cli/bat.nix
       ./cli/direnv.nix
+      ./cli/eza.nix
       ./cli/fish.nix
       ./cli/starship.nix
       ./cli/git.nix
