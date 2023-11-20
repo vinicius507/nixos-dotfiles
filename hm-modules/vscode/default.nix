@@ -23,5 +23,8 @@
       }
     ];
   };
+  home.file.".vscode/argv.json".text = builtins.toJSON {
+    password-store = "gnome";
+  };
   stylix.targets.vscode.enable = false;
 }
