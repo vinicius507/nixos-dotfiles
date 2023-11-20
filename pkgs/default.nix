@@ -17,4 +17,9 @@
       inherit (pkgs) lib grim libnotify slurp wl-clipboard writeShellScriptBin;
     };
   };
+  zellijUtils = {
+    edit = import ./zellijUtils/edit.nix {
+      inherit (pkgs) lib fd gum writeText writeShellScriptBin;
+    };
+  };
 }
