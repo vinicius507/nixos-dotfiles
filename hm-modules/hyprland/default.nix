@@ -13,7 +13,10 @@ in {
     ./waybar.nix
     ./wezterm.nix
   ];
-  home.packages = with pkgs; [wl-clipboard];
+  home.packages = with pkgs; [
+    wl-clipboard
+    xdg-utils
+  ];
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
