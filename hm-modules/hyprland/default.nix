@@ -19,6 +19,7 @@ in {
       input = {
         kb_layout = "br";
         follow_mouse = 1;
+        mouse_refocus = false;
         sensitivity = 0;
       };
       general = {
