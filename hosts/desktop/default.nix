@@ -61,4 +61,7 @@
     jack.enable = true;
   };
   security.rtkit.enable = true;
+
+  virtualisation.docker.enable = true;
+  users.extraGroups.docker.members = ["vini"];
 }
