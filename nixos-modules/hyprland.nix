@@ -1,6 +1,6 @@
 {
   outputs,
-  lib,
+  config,
   pkgs,
   ...
 }: {
@@ -13,12 +13,17 @@
   };
   services.greetd = {
     enable = true;
-    settings = rec {
-      initial_session = {
-        command = lib.getExe pkgs.hyprland;
-        user = "vini";
+    settings = {
+      default_session = {
+        user = "greeter";
+        command = builtins.concatStringsSep " " [
+          "${pkgs.greetd.tuigreet}/bin/tuigreet"
+          "--time"
+          "--remember-session"
+          "--sessions ${config.services.xserver.displayManager.sessionData.desktops}/share/wayland-sessions"
+          "--cmd Hyprland"
+        ];
       };
-      default_session = initial_session;
     };
   };
 }

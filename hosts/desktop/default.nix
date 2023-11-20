@@ -49,8 +49,10 @@
     services.mpris-proxy.enable = true;
   };
 
-  programs.steam.enable = true;
-  programs.gamescope.enable = true;
+  programs.steam = {
+    enable = true;
+    gamescopeSession.enable = true;
+  };
 
   services.pipewire = {
     enable = true;
