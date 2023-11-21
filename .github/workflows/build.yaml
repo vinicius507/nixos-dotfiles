@@ -1,0 +1,16 @@
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  desktop:
+    name: Build desktop configuration
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@main
+      - name: Run `nix build`
+        run: nix build .#nixosConfigurations.desktop.config.system.build.toplevel
