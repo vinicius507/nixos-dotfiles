@@ -39,9 +39,6 @@
     zoom-us
   ];
 
-  hardware.bluetooth.enable = true;
-  hardware.pulseaudio.enable = false;
-
   home-manager.users.vini = {
     imports = [
       outputs.homeManagerModules.vscode
@@ -59,6 +56,11 @@
     settings.custom.end = "''${pkgs.libnotify}/bin/notify-send 'GameMode ended'";
   };
 
+  hardware.bluetooth.enable = true;
+  hardware.pulseaudio = {
+    enable = false;
+    extraConfig = "load-module module-switch-on-connect";
+  };
   services.pipewire = {
     enable = true;
     alsa = {
