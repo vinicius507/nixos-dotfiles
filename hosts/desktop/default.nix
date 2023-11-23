@@ -57,10 +57,7 @@
   };
 
   hardware.bluetooth.enable = true;
-  hardware.pulseaudio = {
-    enable = false;
-    extraConfig = "load-module module-switch-on-connect";
-  };
+
   services.pipewire = {
     enable = true;
     alsa = {
