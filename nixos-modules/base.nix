@@ -30,7 +30,7 @@
     ];
     home.sessionVariables = {
       BROWSER = "google-chrome-stable";
-      EDITOR = "nvim";
+      EDITOR = "hx";
     };
     programs.nvchad = {
       enable = true;
