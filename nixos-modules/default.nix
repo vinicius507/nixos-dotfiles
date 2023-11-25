@@ -1,5 +1,6 @@
 {
   base = import ./base.nix;
+  gaming = import ./gaming.nix;
   hyprland = import ./hyprland.nix;
   vm = {
     security.sudo.wheelNeedsPassword = false;

@@ -42,6 +42,7 @@
     nixosConfigurations = {
       desktop = mkHost [
         ./hosts/desktop
+        self.nixosModules.gaming
         self.nixosModules.hyprland
       ];
       nixosVm = mkHost [
