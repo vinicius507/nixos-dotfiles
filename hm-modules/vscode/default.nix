@@ -5,6 +5,7 @@
       arrterian.nix-env-selector
       catppuccin.catppuccin-vsc
       github.copilot
+      ms-vscode-remote.remote-containers
       ms-vsliveshare.vsliveshare
       vscodevim.vim
       yzhang.markdown-all-in-one
@@ -15,6 +16,10 @@
       "window.titleBarStyle" = "custom";
       "workbench.colorTheme" = "Catppuccin Mocha";
       "catppuccin.workbenchMode" = "flat";
+      "dev.containers.defaultExtensions" = [
+        "GitHub.copilot"
+        "ms-vsliveshare.vsliveshare"
+      ];
     };
     keybindings = [
       {
