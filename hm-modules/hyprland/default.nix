@@ -7,6 +7,7 @@
   inherit (pkgs.waylandUtils) screenshot;
 in {
   imports = [
+    ./foot.nix
     ./gtk.nix
     ./mako.nix
     ./rofi.nix

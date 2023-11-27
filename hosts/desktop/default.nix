@@ -32,7 +32,6 @@
 
   environment.systemPackages = with pkgs; [
     discord
-    foot
     google-chrome
     pcmanfm
     spotify
