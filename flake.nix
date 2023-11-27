@@ -1,10 +1,9 @@
 {
   inputs = {
-    # TODO: update to latest stable when 23.11 launches
-    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1.0.tar.gz";
-    home-manager.url = "https://flakehub.com/f/nix-community/home-manager/0.1.0.tar.gz";
-    nixos-hardware.url = "https://flakehub.com/f/NixOS/nixos-hardware/0.1.1464.tar.gz";
-    stylix.url = "https://flakehub.com/f/danth/stylix/0.1.269.tar.gz";
+    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/*.tar.gz";
+    home-manager.url = "https://flakehub.com/f/nix-community/home-manager/*.tar.gz";
+    nixos-hardware.url = "https://flakehub.com/f/NixOS/nixos-hardware/*.tar.gz";
+    stylix.url = "https://flakehub.com/f/danth/stylix/*.tar.gz";
   };
   outputs = {
     self,
