@@ -11,6 +11,7 @@
       yzhang.markdown-all-in-one
     ];
     userSettings = {
+      "editor.minimap.enabled" = false;
       "editor.semanticHighlighting.enabled" = true;
       "terminal.integrated.minimumContrastRatio" = 1;
       "window.titleBarStyle" = "custom";
