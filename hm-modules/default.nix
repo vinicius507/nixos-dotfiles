@@ -17,6 +17,7 @@
     ];
     home.packages = with pkgs; [
       fd
+      fh
       ripgrep
       tldr
       tree
