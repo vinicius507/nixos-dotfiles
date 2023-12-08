@@ -4,6 +4,7 @@
   pkgs,
   ...
 }: let
+  inherit (config.lib.stylix) colors;
   inherit (pkgs.waylandUtils) screenshot;
 in {
   imports = [
@@ -32,6 +33,8 @@ in {
         gaps_out = 20;
         border_size = 2;
         layout = "dwindle";
+        "col.active_border" = lib.mkForce "rgb(${colors.base03})";
+        "col.inactive_border" = lib.mkForce "rgb(${colors.base00})";
       };
       exec-once = [
         "${pkgs.mako}/bin/mako"
