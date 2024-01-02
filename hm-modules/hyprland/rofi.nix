@@ -1,4 +1,5 @@
 {
+  lib,
   config,
   pkgs,
   ...
@@ -9,7 +10,7 @@ in {
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
-    terminal = "${pkgs.wezterm}/bin/wezterm";
+    terminal = lib.getExe pkgs.foot;
     theme = {
       "*" = {
         accent = mkLiteral "#${colors.base0D}";

@@ -13,7 +13,6 @@ in {
     ./mako.nix
     ./rofi.nix
     ./waybar.nix
-    ./wezterm.nix
   ];
   home.packages = with pkgs; [
     wl-clipboard
@@ -88,8 +87,8 @@ in {
       "$mod" = "SUPER";
       bind = [
         "$mod, Space, exec, rofi -show drun"
-        "$mod, Return, exec, wezterm"
-        "$mod SHIFT, Return, exec, [float] wezterm start --always-new-process"
+        "$mod, Return, exec, foot"
+        "$mod SHIFT, Return, exec, [float] foot"
         "$mod SHIFT, C, killactive,"
         "$mod SHIFT, Q, exit,"
         "$mod, F, fullscreen,0"
