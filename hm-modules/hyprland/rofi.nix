@@ -47,12 +47,20 @@ in {
         background-color = mkLiteral "@background-alt";
         text-color = mkLiteral "@foreground";
         orientation = mkLiteral "horizontal";
-        children = map mkLiteral ["textboxPrompt-colon" "entry"];
+        children = map mkLiteral ["textbox-prompt-drun" "entry"];
       };
-      textboxPrompt-colon = {
+      textbox-prompt-drun = {
         enabled = true;
         expand = false;
         str = "";
+        padding = mkLiteral "12px 0px 12px 15px";
+        text-color = mkLiteral "@accent";
+        background-color = mkLiteral "transparent";
+      };
+      textbox-prompt-run = {
+        enabled = true;
+        expand = false;
+        str = "";
         padding = mkLiteral "12px 0px 12px 15px";
         text-color = mkLiteral "@accent";
         background-color = mkLiteral "transparent";
@@ -106,13 +114,11 @@ in {
         reverse = false;
         fixed-height = false;
         fixed-columns = true;
-
         spacing = mkLiteral "10px";
         background-color = mkLiteral "transparent";
         text-color = mkLiteral "@foreground";
         cursor = "default";
       };
-
       element = {
         enabled = true;
         spacing = mkLiteral "10px";
@@ -178,8 +184,7 @@ in {
       };
     };
     extraConfig = {
-      modes = map mkLiteral ["drun"];
-      display-drun = "";
+      modes = map mkLiteral ["drun" "run"];
       show-icons = true;
       icon-theme = config.gtk.iconTheme.name;
       match = "fuzzy";

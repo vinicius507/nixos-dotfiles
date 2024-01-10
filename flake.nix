@@ -34,6 +34,7 @@
         nvchadUtils = self.packages.${final.system}.nvchadUtils;
       };
       hyprland = final: prev: {
+        rofiUtils = self.packages.${final.system}.rofiUtils;
         waylandUtils = self.packages.${final.system}.waylandUtils;
       };
     };

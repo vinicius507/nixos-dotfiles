@@ -12,6 +12,11 @@
       inherit (pkgs.xorg) lndir;
     };
   };
+  rofiUtils = {
+    run = import ./rofiUtils/run.nix {
+      inherit (pkgs) writeShellScriptBin;
+    };
+  };
   waylandUtils = {
     screenshot = import ./waylandUtils/screenshot.nix {
       inherit (pkgs) lib grim libnotify slurp wl-clipboard writeShellScriptBin;

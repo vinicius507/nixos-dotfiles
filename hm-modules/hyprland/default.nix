@@ -87,6 +87,7 @@ in {
       "$mod" = "SUPER";
       bind = [
         "$mod, Space, exec, rofi -show drun"
+        "$mod, R, exec, ${lib.getExe pkgs.rofiUtils.run}"
         "$mod, Return, exec, foot"
         "$mod SHIFT, Return, exec, [float] foot"
         "$mod SHIFT, C, killactive,"
@@ -133,7 +134,7 @@ in {
       ];
     };
     extraConfig = ''
-      bind = $mod, R, submap, resize
+      bind = $mod SHIFT, R, submap, resize
       submap = resize
       binde = , l, resizeactive, 10 0
       binde = , h, resizeactive, -10 0
