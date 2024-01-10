@@ -31,6 +31,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    anytype
     discord
     google-chrome
     pcmanfm
