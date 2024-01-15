@@ -3,6 +3,12 @@
     home.username = "vini";
     home.homeDirectory = "/home/vini";
     home.stateVersion = "23.11";
+
+    programs.gpg.enable = true;
+    services.gpg-agent = {
+      enable = true;
+      pinentryFlavor = "curses";
+    };
   };
   cli = {pkgs, ...}: {
     imports = [

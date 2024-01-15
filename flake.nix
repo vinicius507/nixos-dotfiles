@@ -3,6 +3,7 @@
     nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/*.tar.gz";
     home-manager.url = "https://flakehub.com/f/nix-community/home-manager/*.tar.gz";
     nixos-hardware.url = "https://flakehub.com/f/NixOS/nixos-hardware/*.tar.gz";
+    sops-nix.url = "https://flakehub.com/f/Mic92/sops-nix/*.tar.gz";
     stylix.url = "https://flakehub.com/f/danth/stylix/*.tar.gz";
   };
   outputs = {

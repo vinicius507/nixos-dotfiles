@@ -1,6 +1,7 @@
 {
   inputs,
   outputs,
+  config,
   pkgs,
   ...
 }: {
@@ -35,6 +36,7 @@
     discord
     google-chrome
     pcmanfm
+    sops
     spotify
     zoom-us
   ];
@@ -59,6 +61,9 @@
   };
   security.rtkit.enable = true;
 
-  virtualisation.docker.enable = true;
+  sops.secrets."users/vini/password".neededForUsers = true;
+  users.users.vini.hashedPasswordFile = config.sops.secrets."users/vini/password".path;
   users.extraGroups.docker.members = ["vini"];
+
+  virtualisation.docker.enable = true;
 }

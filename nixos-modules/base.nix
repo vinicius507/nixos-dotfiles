@@ -7,6 +7,7 @@
 }: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
+    inputs.sops-nix.nixosModules.sops
     inputs.stylix.nixosModules.stylix
   ];
 
@@ -15,33 +16,43 @@
 
   users.users.vini = {
     isNormalUser = true;
-    initialPassword = "changeme";
     shell = pkgs.fish;
     extraGroups = ["wheel"];
   };
-
-  home-manager.useGlobalPkgs = true;
-  home-manager.useUserPackages = true;
-  home-manager.users.vini = {
-    imports = [
+  home-manager = {
+    sharedModules = [
+      inputs.sops-nix.homeManagerModules.sops
       outputs.homeManagerModules.base
       outputs.homeManagerModules.cli
       outputs.homeManagerModules.nvchad
     ];
-    home.sessionVariables = {
-      BROWSER = "google-chrome-stable";
-      EDITOR = "hx";
-    };
-    programs.nvchad = {
-      enable = true;
-      settings = {
-        ui.theme = "catppuccin";
-        ui.transparency = true;
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.vini = {
+      home.sessionVariables = {
+        BROWSER = "google-chrome-stable";
+        EDITOR = "hx";
       };
+      programs.nvchad = {
+        enable = true;
+        settings = {
+          ui.theme = "catppuccin";
+          ui.transparency = true;
+        };
+      };
+      sops.defaultSopsFile = ../secrets/default.yaml;
     };
   };
 
   programs.fish.enable = true;
+
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
+      PermitRootLogin = "no";
+    };
+  };
 
   console.keyMap = "br-abnt2";
 
@@ -69,6 +80,8 @@
   };
 
   nixpkgs.overlays = builtins.attrValues outputs.overlays;
+
+  sops.defaultSopsFile = ../secrets/default.yaml;
 
   stylix = {
     polarity = "dark";
