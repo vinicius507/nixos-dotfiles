@@ -38,6 +38,7 @@
     pcmanfm
     sops
     spotify
+    step-cli
     zoom-us
   ];
 
