@@ -27,7 +27,6 @@
   };
 
   networking.hostName = "desktop";
-  services.tailscale.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
@@ -51,6 +50,13 @@
 
   hardware.bluetooth.enable = true;
 
+  security.rtkit.enable = true;
+  security.pki.certificateFiles = [
+    config.sops.secrets."services/step-ca/root-cert".path
+  ];
+
+  services.tailscale.enable = true;
+
   services.pipewire = {
     enable = true;
     alsa = {
@@ -60,9 +66,10 @@
     pulse.enable = true;
     jack.enable = true;
   };
-  security.rtkit.enable = true;
 
   sops.secrets."users/vini/password".neededForUsers = true;
+  sops.secrets."services/step-ca/root-cert" = {};
+
   users.users.vini.hashedPasswordFile = config.sops.secrets."users/vini/password".path;
   users.extraGroups.docker.members = ["vini"];
 
