@@ -27,12 +27,17 @@
     userSettings = {
       "breadcrumbs.enabled" = false;
       "catppuccin.workbenchMode" = "flat";
+      "dev.containers.defaultExtensions" = [
+        "GitHub.copilot"
+        "ms-vsliveshare.vsliveshare"
+      ];
       "editor.fontLigatures" = true;
+      "editor.formatOnSave" = true;
       "editor.lineHeight" = 1.8;
       "editor.minimap.enabled" = false;
       "editor.rulers" = [80 120];
-      "editor.scrollbar.vertical" = "hidden";
       "editor.scrollbar.horizontal" = "hidden";
+      "editor.scrollbar.vertical" = "hidden";
       "editor.semanticHighlighting.enabled" = true;
       "explorer.compactFolders" = false;
       "explorer.fileNesting.enabled" = true;
@@ -55,10 +60,6 @@
       "workbench.iconTheme" = "symbols";
       "workbench.layoutControl.enabled" = false;
       "workbench.startupEditor" = "none";
-      "dev.containers.defaultExtensions" = [
-        "GitHub.copilot"
-        "ms-vsliveshare.vsliveshare"
-      ];
       "vim.leader" = "<space>";
       "vim.hlsearch" = true;
       "vim.incsearch" = true;
