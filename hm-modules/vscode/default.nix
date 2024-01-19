@@ -47,6 +47,7 @@
       "terminal.integrated.minimumContrastRatio" = 1;
       "window.commandCenter" = false;
       "window.menuBarVisibility" = "toggle";
+      "window.restoreWindows" = false;
       "window.titleBarStyle" = "native";
       "workbench.activityBar.location" = "hidden";
       "workbench.colorTheme" = "Catppuccin Mocha";
