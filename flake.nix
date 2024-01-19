@@ -30,10 +30,6 @@
       base = final: prev: {
         zellijUtils = self.packages.${final.system}.zellijUtils;
       };
-      nvchad = final: prev: {
-        nvchad = self.packages.${final.system}.nvchad;
-        nvchadUtils = self.packages.${final.system}.nvchadUtils;
-      };
       hyprland = final: prev: {
         rofiUtils = self.packages.${final.system}.rofiUtils;
         waylandUtils = self.packages.${final.system}.waylandUtils;

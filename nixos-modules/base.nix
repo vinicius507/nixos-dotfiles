@@ -24,7 +24,6 @@
       inputs.sops-nix.homeManagerModules.sops
       outputs.homeManagerModules.base
       outputs.homeManagerModules.cli
-      outputs.homeManagerModules.nvchad
     ];
     useGlobalPkgs = true;
     useUserPackages = true;
@@ -32,13 +31,6 @@
       home.sessionVariables = {
         BROWSER = "google-chrome-stable";
         EDITOR = "hx";
-      };
-      programs.nvchad = {
-        enable = true;
-        settings = {
-          ui.theme = "catppuccin";
-          ui.transparency = true;
-        };
       };
       sops.defaultSopsFile = ../secrets/default.yaml;
     };

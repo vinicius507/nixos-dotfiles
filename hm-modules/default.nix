@@ -30,6 +30,5 @@
     ];
   };
   hyprland = import ./hyprland;
-  nvchad = import ./nvchad;
   vscode = import ./vscode;
 }
