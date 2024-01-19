@@ -54,7 +54,7 @@
       "workbench.editor.labelFormat" = "short";
       "workbench.iconTheme" = "symbols";
       "workbench.layoutControl.enabled" = false;
-      "workbench.startupEditor" = "newUntitledFile";
+      "workbench.startupEditor" = "none";
       "dev.containers.defaultExtensions" = [
         "GitHub.copilot"
         "ms-vsliveshare.vsliveshare"
