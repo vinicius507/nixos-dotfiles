@@ -82,7 +82,6 @@
   };
 
   sops.secrets."users/vini/password".neededForUsers = true;
-  sops.secrets."services/step-ca/root-cert" = {};
 
   users.users.vini.hashedPasswordFile = config.sops.secrets."users/vini/password".path;
   users.extraGroups.docker.members = ["vini"];
