@@ -65,19 +65,18 @@
       "vim.useSystemClipboard" = true;
       "vim.enableNeovim" = true;
       "vim.neovimPath" = lib.getExe pkgs.neovim;
-      "vim.handleKeys" = {"<C-q>" = false;};
+      "vim.handleKeys" = {
+        "<C-q>" = false;
+        "<C-p>" = false;
+      };
       "vim.normalModeKeyBindingsNonRecursive" = [
-        {
-          before = ["p"];
-          after = ["p" "g" "v" "y"];
-        }
         {
           before = ["K"];
           after = ["g" "h"];
         }
         {
           before = ["<leader>" "e"];
-          commands = ["workbench.action.focusSidebar"];
+          commands = ["workbench.action.focusSideBar"];
         }
         {
           before = ["<leader>" "f" "f"];
@@ -132,14 +131,9 @@
         when = "editorTextFocus && vim.active && vim.mode != 'Insert'";
       }
       {
-        key = ", e";
+        key = "escape";
         command = "workbench.action.focusLastEditorGroup";
-        when = "!editorTextFocus";
-      }
-      {
-        key = ", t";
-        command = "workbench.action.toggleSidebarVisibility";
-        when = "!editorTextFocus";
+        when = "explorerViewletVisible && filesExplorerFocus";
       }
       {
         key = "r";
