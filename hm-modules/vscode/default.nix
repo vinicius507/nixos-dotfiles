@@ -137,9 +137,19 @@
         when = "explorerViewletVisible && filesExplorerFocus";
       }
       {
+        key = "a";
+        command = "explorer.newFile";
+        when = "explorerViewletVisible && filesExplorerFocus && !inputFocus";
+      }
+      {
+        key = "shift+a";
+        command = "explorer.newFolder";
+        when = "explorerViewletVisible && filesExplorerFocus && !inputFocus";
+      }
+      {
         key = "r";
         command = "renameFile";
-        when = "explorerViewletVisible && filesExplorerFocus";
+        when = "explorerViewletVisible && filesExplorerFocus && !inputFocus";
       }
       {
         key = "tab";
