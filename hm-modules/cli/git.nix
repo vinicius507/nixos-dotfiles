@@ -4,9 +4,10 @@
     userName = "Vinicius Oliveira";
     userEmail = "vinicius@myriad.codes";
     ignores = [
-      ".envrc"
       ".cache/"
       ".direnv/"
+      ".envrc"
+      ".vscode/"
     ];
     signing = {
       signByDefault = true;
