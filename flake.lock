@@ -204,11 +204,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1706001011,
-        "narHash": "sha256-J7Bs9LHdZubgNHZ6+eE/7C18lZ1P6S5/zdJSdXFItI4=",
+        "lastModified": 1700847865,
+        "narHash": "sha256-uWaOIemGl9LF813MW0AEgCBpKwFo2t1Wv3BZc6e5Frw=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "3df2a80f3f85f91ea06e5e91071fa74ba92e5084",
+        "rev": "8cedd63eede4c22deb192f1721dd67e7460e1ebe",
         "type": "github"
       },
       "original": {
@@ -352,16 +352,16 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1706172305,
-        "narHash": "sha256-9VXEpF+wFyVNmUAMyGFPqXCSTAa+oXEkwm2Fe0Oq/JM=",
-        "rev": "1a5dee1957dc45e125013ae3919ff284cfb83cdc",
-        "revCount": 290,
+        "lastModified": 1705668784,
+        "narHash": "sha256-U/1Qol9H5nb8FtWSXSiHY8T4Y7TOIo7NHuqe4uuiBec=",
+        "rev": "a9e3ce064a778b386fb88fb152c02ae95aa2cbd2",
+        "revCount": 285,
         "type": "tarball",
-        "url": "https://api.flakehub.com/f/pinned/danth/stylix/0.1.290%2Brev-1a5dee1957dc45e125013ae3919ff284cfb83cdc/018d46ef-f507-708e-868b-b575ec03bbaf/source.tar.gz"
+        "url": "https://api.flakehub.com/f/pinned/danth/stylix/0.1.285%2Brev-a9e3ce064a778b386fb88fb152c02ae95aa2cbd2/018d21c9-4454-7de5-b660-2e4143ad7854/source.tar.gz"
       },
       "original": {
         "type": "tarball",
-        "url": "https://flakehub.com/f/danth/stylix/%2A.tar.gz"
+        "url": "https://flakehub.com/f/danth/stylix/%3D0.1.285.tar.gz"
       }
     }
   },
