@@ -40,7 +40,16 @@
       "editor.scrollbar.vertical" = "hidden";
       "editor.semanticHighlighting.enabled" = true;
       "explorer.compactFolders" = false;
+      "explorer.confirmDelete" = false;
       "explorer.fileNesting.enabled" = true;
+      "explorer.fileNesting.patterns" = {
+        ".env" = ".env*";
+        "flake.nix" = "flake.lock";
+      };
+      "files.exclude" = {
+        "**/.devenv" = true;
+        "**/.direnv" = true;
+      };
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = lib.getExe pkgs.nil;
       "nix.serverSettings" = {
