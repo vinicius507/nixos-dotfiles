@@ -69,6 +69,7 @@
     extra-trusted-public-keys = [
       "vinicius507.cachix.org-1:cWsivfWENRKZ19obQM96XtSKha88BEuQWQt+qEFFnYE="
     ];
+    trusted-users = ["root" "@wheel"];
   };
 
   nixpkgs.overlays = builtins.attrValues outputs.overlays;
