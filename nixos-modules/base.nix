@@ -80,8 +80,8 @@
     polarity = "dark";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     image = builtins.fetchurl {
-      url = "https://cdn.discordapp.com/attachments/635625973764849684/1113554221653037127/1_pexels-elijah-odonnell-4173624.jpg";
-      sha256 = "0dhd16r6npar8rb7y3xddb7prs5c1mi8ssplkngsaqrmyip683gm";
+      url = "https://i.imgur.com/OrCZMPm.jpeg";
+      sha256 = "sha256:1dd8s9hdfs0zff2aq2nzvi2c3rh60m8g2618x3sybz81xz7kk36x";
     };
     opacity = {
       desktop = 0.6;
