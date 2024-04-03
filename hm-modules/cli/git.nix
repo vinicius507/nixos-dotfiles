@@ -8,6 +8,7 @@
       ".direnv/"
       ".envrc"
       ".vscode/"
+      ".lazy.lua"
     ];
     signing = {
       signByDefault = true;
