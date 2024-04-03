@@ -30,7 +30,7 @@
     users.vini = {
       home.sessionVariables = {
         BROWSER = "google-chrome-stable";
-        EDITOR = "hx";
+        EDITOR = "nvim";
       };
       sops.defaultSopsFile = ../secrets/default.yaml;
     };

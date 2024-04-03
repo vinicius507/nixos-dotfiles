@@ -20,6 +20,7 @@
       ./cli/helix.nix
       ./cli/starship.nix
       ./cli/zellij.nix
+      ./neovim
     ];
     home.packages = with pkgs; [
       fd

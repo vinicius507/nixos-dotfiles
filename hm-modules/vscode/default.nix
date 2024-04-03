@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  config,
   ...
 }: {
   programs.vscode = {
@@ -74,7 +75,7 @@
       "vim.incsearch" = true;
       "vim.useSystemClipboard" = true;
       "vim.enableNeovim" = true;
-      "vim.neovimPath" = lib.getExe pkgs.neovim;
+      "vim.neovimPath" = lib.getExe config.programs.neovim.finalPackage;
       "vim.handleKeys" = {
         "<C-q>" = false;
         "<C-p>" = false;
