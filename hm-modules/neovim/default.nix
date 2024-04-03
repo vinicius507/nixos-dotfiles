@@ -11,6 +11,7 @@
       unzip
       vscode-langservers-extracted
     ];
+    vimAlias = true;
     withNodeJs = true;
     withRuby = false;
   };
