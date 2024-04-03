@@ -17,12 +17,12 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.lang.docker" },
 		{ import = "lazyvim.plugins.extras.lang.json" },
 		{ import = "lazyvim.plugins.extras.lang.markdown" },
-		{ import = "lazyvim.plugins.extras.lang.typescript" },
 		{ import = "lazyvim.plugins.extras.lang.yaml" },
-		{ import = "lazyvim.plugins.extras.lazyrc" },
 		{ import = "lazyvim.plugins.extras.linting.eslint" },
 		{ import = "lazyvim.plugins.extras.vscode" },
 		{ import = "plugins" },
+		-- LazyRc must be the last import
+		{ import = "lazyvim.plugins.extras.lazyrc" },
 	},
 	lazy_nvim = {
 		performance = {
