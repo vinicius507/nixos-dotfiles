@@ -6,6 +6,7 @@
       gcc
       lua-language-server
       marksman
+      markdownlint-cli
       nil
       shfmt
       stylua
