@@ -1,7 +1,10 @@
+---@type LazySpec[]
 return {
 	{
 		"stevearc/oil.nvim",
+		lazy = false,
 		dependencies = { "nvim-tree/nvim-web-devicons" },
+		cmd = "Oil",
 		keys = {
 			{
 				"<Leader>e",
