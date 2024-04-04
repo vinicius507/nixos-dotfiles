@@ -5,6 +5,7 @@
       alejandra
       gcc
       lua-language-server
+      marksman
       nil
       shfmt
       stylua
