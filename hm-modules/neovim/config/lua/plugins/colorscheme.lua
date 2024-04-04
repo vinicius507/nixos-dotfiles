@@ -1,3 +1,9 @@
+local transparent_background = true
+
+if vim.g.neovide then
+	transparent_background = false
+end
+
 return {
 	{
 		"LazyVim/LazyVim",
@@ -11,7 +17,7 @@ return {
 		build = ":CatppuccinCompile",
 		opts = {
 			flavour = "mocha",
-			transparent_background = true,
+			transparent_background = transparent_background,
 		},
 	},
 }
