@@ -15,6 +15,7 @@ in {
     ./waybar.nix
   ];
   home.packages = with pkgs; [
+    neovide
     wl-clipboard
     xdg-utils
   ];
