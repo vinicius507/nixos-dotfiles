@@ -11,7 +11,6 @@ return {
 		build = ":CatppuccinCompile",
 		opts = {
 			flavour = "mocha",
-			transparent_background = not vim.g.neovide,
 			term_colors = vim.g.neovide,
 		},
 	},
