@@ -1,5 +1,28 @@
----@type LazySpec[]
+---@type LazySpec
 return {
+	{
+		"ThePrimeagen/harpoon",
+		import = "lazyvim.plugins.extras.editor.harpoon2",
+		keys = {
+			{ "<Leader>h", false },
+			{ "<Leader>H", false },
+			{
+				"<Leader>a",
+				function()
+					require("harpoon"):list():add()
+				end,
+				desc = "Harpoon file",
+			},
+			{
+				"<C-e>",
+				function()
+					local harpoon = require("harpoon")
+					harpoon.ui:toggle_quick_menu(harpoon:list())
+				end,
+				desc = "Harpoon Quick Menu",
+			},
+		},
+	},
 	{
 		"stevearc/oil.nvim",
 		lazy = false,
