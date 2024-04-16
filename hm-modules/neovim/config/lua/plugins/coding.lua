@@ -1,10 +1,30 @@
----@type LazySpec[]
+---@type LazySpec
 return {
 	{
 		"L3MON4D3/LuaSnip",
 		config = function()
 			require("luasnip.loaders.from_vscode").lazy_load()
 		end,
+	},
+	{
+		"zbirenbaum/copilot.lua",
+		lazy = false,
+		import = "lazyvim.plugins.extras.coding.copilot",
+		opts = {
+			suggestion = {
+				enabled = true,
+				auto_trigger = true,
+			},
+			filetypes = {
+				sh = function()
+					local is_env_file = string.match(vim.fs.basename(vim.api.nvim_buf_get_name(0)), "^%.env.*")
+					if is_env_file then
+						return false
+					end
+					return true
+				end,
+			},
+		},
 	},
 	{
 		"hrsh7th/nvim-cmp",
@@ -16,18 +36,14 @@ return {
 		opts = function(_, opts)
 			local cmp = require("cmp")
 
-			opts.sources = cmp.config.sources(vim.list_extend(
-				vim.tbl_filter(function(v)
-					return not vim.tbl_contains({ "copilot" }, v.name)
-				end, opts.sources),
-				{ { name = "emoji" } },
-				0,
-				#opts.sources - 1
-			))
-			opts.formatting.fields = {
-				cmp.ItemField.Kind,
-				cmp.ItemField.Abbr,
-				cmp.ItemField.Menu,
+			opts.sources = vim.list_extend(opts.sources, { { name = "emoji" } })
+			opts.formatting.fields = { cmp.ItemField.Kind, cmp.ItemField.Abbr, cmp.ItemField.Menu }
+			opts.formatting.format = require("lspkind").cmp_format({ mode = "symbol", maxwidth = 50 })
+			opts.view = {
+				entries = {
+					name = "custom",
+					selection_order = "near_cursor",
+				},
 			}
 			opts.mapping = cmp.mapping.preset.insert({
 				["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
@@ -46,16 +62,6 @@ return {
 					fallback()
 				end,
 			})
-			opts.formatting.format = require("lspkind").cmp_format({
-				mode = "symbol",
-				maxwidth = 50,
-			})
-			opts.view = {
-				entries = {
-					name = "custom",
-					selection_order = "near_cursor",
-				},
-			}
 		end,
 	},
 	{
@@ -69,25 +75,6 @@ return {
 				highlight = "gsh",
 				replace = "gsr",
 				update_n_lines = "gsn",
-			},
-		},
-	},
-	{
-		"copilot.lua",
-		lazy = false,
-		opts = {
-			suggestion = {
-				enabled = true,
-				auto_trigger = true,
-			},
-			filetypes = {
-				sh = function()
-					local is_env_file = string.match(vim.fs.basename(vim.api.nvim_buf_get_name(0)), "^%.env.*")
-					if is_env_file then
-						return false
-					end
-					return true
-				end,
 			},
 		},
 	},

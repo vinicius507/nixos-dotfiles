@@ -10,11 +10,11 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 require("lazy").setup({
 	spec = {
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
-		{ import = "lazyvim.plugins.extras.coding.copilot" },
 		{ import = "lazyvim.plugins.extras.dap.core" },
 		{ import = "lazyvim.plugins.extras.vscode" },
 		{ import = "plugins" },
-		-- LazyRc must be the last import
+
+		-- NOTE: LazyRc must be the last import
 		{ import = "lazyvim.plugins.extras.lazyrc" },
 	},
 	lazy_nvim = {
