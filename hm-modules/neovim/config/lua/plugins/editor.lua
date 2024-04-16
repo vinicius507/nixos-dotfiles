@@ -6,11 +6,7 @@ return {
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		cmd = "Oil",
 		keys = {
-			{
-				"<Leader>e",
-				"<CMD>Oil --float<CR>",
-				{ desc = "Explorer" },
-			},
+			{ "<Leader>e", vim.cmd.Oil, desc = "Oil.nvim" },
 		},
 		opts = {
 			keymaps = {
