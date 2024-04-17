@@ -5,13 +5,14 @@
       alejandra
       gcc
       lua-language-server
-      marksman
       markdownlint-cli
+      marksman
       nil
       shfmt
       stylua
       unzip
       vscode-langservers-extracted
+      yaml-language-server
     ];
     vimAlias = true;
     withNodeJs = true;
