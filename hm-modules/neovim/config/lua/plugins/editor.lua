@@ -29,7 +29,7 @@ return {
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		cmd = "Oil",
 		keys = {
-			{ "<Leader>e", vim.cmd.Oil, desc = "Oil.nvim" },
+			{ "-", vim.cmd.Oil, desc = "Oil.nvim" },
 		},
 		opts = {
 			keymaps = {
