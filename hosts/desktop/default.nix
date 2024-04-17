@@ -48,7 +48,12 @@
     services.mpris-proxy.enable = true;
   };
 
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    settings = {
+      General.Experimental = true;
+    };
+  };
 
   security.rtkit.enable = true;
   security.pki.certificates = [
