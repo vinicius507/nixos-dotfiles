@@ -1,5 +1,6 @@
 ---@type LazySpec
 return {
+	{ import = "lazyvim.plugins.extras.coding.copilot" },
 	{
 		"L3MON4D3/LuaSnip",
 		config = function()
@@ -9,7 +10,7 @@ return {
 	{
 		"zbirenbaum/copilot.lua",
 		lazy = false,
-		import = "lazyvim.plugins.extras.coding.copilot",
+		build = ":Copilot auth",
 		opts = {
 			suggestion = {
 				enabled = true,
@@ -45,6 +46,7 @@ return {
 					selection_order = "near_cursor",
 				},
 			}
+			opts.experimental.ghost_text = false
 			opts.mapping = cmp.mapping.preset.insert({
 				["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
 				["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
