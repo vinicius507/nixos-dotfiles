@@ -1,6 +1,12 @@
 ---@type LazySpec
 return {
 	{
+		"mateusbraga/vim-spell-pt-br",
+		config = function()
+			vim.opt.spelllang:append("pt_br")
+		end,
+	},
+	{
 		"ThePrimeagen/harpoon",
 		import = "lazyvim.plugins.extras.editor.harpoon2",
 		keys = {
