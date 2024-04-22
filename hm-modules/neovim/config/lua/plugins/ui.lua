@@ -1,4 +1,18 @@
+---@type LazySpec
 return {
+	{
+		"akinsho/bufferline.nvim",
+		keys = function()
+			return {
+				{ "<leader>bo", "<Cmd>BufferLineCloseOthers<CR>", desc = "Delete Other Buffers" },
+			}
+		end,
+		opts = {
+			options = {
+				mode = "tabs",
+			},
+		},
+	},
 	{
 		"folke/noice.nvim",
 		opts = function(_, opts)
