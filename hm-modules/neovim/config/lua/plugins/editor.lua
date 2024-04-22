@@ -30,6 +30,14 @@ return {
 		},
 	},
 	{
+		"nvim-neo-tree/neo-tree.nvim",
+		---@diagnostic disable-next-line: assign-type-mismatch
+		init = false,
+		opts = {
+			hijack_netrw_behavior = false,
+		},
+	},
+	{
 		"stevearc/oil.nvim",
 		lazy = false,
 		dependencies = { "nvim-tree/nvim-web-devicons" },
