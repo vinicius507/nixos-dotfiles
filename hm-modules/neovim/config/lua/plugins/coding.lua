@@ -47,6 +47,10 @@ return {
 					selection_order = "near_cursor",
 				},
 			}
+			opts.window = {
+				completion = cmp.config.window.bordered({ border = "single" }),
+				documentation = cmp.config.window.bordered({ border = "single" }),
+			}
 			opts.experimental.ghost_text = false
 			opts.mapping = cmp.mapping.preset.insert({
 				["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
