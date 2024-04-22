@@ -52,8 +52,17 @@
       packages = with pkgs; [
         nix
         git
-        helix
       ];
+      shellHook = ''
+        export DOTFILES_DEV=true
+
+        if [ -z "$NVIM" ]; then
+          mkdir -p /tmp/nvim-dev/config
+          ln -sf $HOME/.config/git /tmp/nvim-dev/config/git
+          ln -sf $HOME/.config/fish /tmp/nvim-dev/config/fish
+          ln -sf ./hm-modules/neovim/config /tmp/nvim-dev/config/nvim
+        fi
+      '';
       NIX_CONFIG = "extra-experimental-features = nix-command flakes";
     };
   };

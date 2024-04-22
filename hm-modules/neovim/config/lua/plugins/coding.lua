@@ -11,6 +11,7 @@ return {
 		"zbirenbaum/copilot.lua",
 		lazy = false,
 		build = ":Copilot auth",
+		enabled = vim.env.DOTFILES_DEV and false,
 		opts = {
 			suggestion = {
 				enabled = true,

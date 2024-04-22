@@ -1,3 +1,11 @@
+if vim.env.DOTFILES_DEV then
+	local stdpath = "/tmp/nvim-dev"
+
+	for _, name in ipairs({ "config", "data", "state", "cache" }) do
+		vim.env[("XDG_%s_HOME"):format(name:upper())] = stdpath .. "/" .. name
+	end
+end
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
