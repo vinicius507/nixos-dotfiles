@@ -5,6 +5,7 @@
     nixos-hardware.url = "https://flakehub.com/f/NixOS/nixos-hardware/*.tar.gz";
     sops-nix.url = "https://flakehub.com/f/Mic92/sops-nix/*.tar.gz";
     stylix.url = "https://flakehub.com/f/danth/stylix/=0.1.285.tar.gz";
+    nur.url = "github:nix-community/NUR";
   };
   outputs = {
     self,
@@ -28,11 +29,12 @@
     packages.${system} = import ./pkgs {inherit outputs pkgs;};
     overlays = {
       base = final: prev: {
-        zellijUtils = self.packages.${final.system}.zellijUtils;
+        zellij-edit = self.packages.${final.system}.zellij-edit;
       };
       hyprland = final: prev: {
-        rofiUtils = self.packages.${final.system}.rofiUtils;
-        waylandUtils = self.packages.${final.system}.waylandUtils;
+        firefox-vertical-tabs = self.packages.${final.system}.firefox-vertical-tabs;
+        rofi-run = self.packages.${final.system}.rofi-run;
+        wl-screenshot = self.packages.${final.system}.wl-screenshot;
       };
     };
     nixosModules = import ./nixos-modules;

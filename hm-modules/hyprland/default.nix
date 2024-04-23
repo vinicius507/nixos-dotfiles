@@ -7,6 +7,7 @@
   inherit (config.lib.stylix) colors;
 in {
   imports = [
+    ./firefox
     ./foot.nix
     ./gtk.nix
     ./mako.nix

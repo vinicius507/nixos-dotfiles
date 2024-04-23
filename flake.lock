@@ -309,11 +309,27 @@
         "type": "github"
       }
     },
+    "nur": {
+      "locked": {
+        "lastModified": 1713841529,
+        "narHash": "sha256-j+6/QJwdlgVYiVcYZGGGVvPB2AdZwhMqdBxI2vY1NA8=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "b5d2a96a95143b370ffc4a834810d07b7fdba2de",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "NUR",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
+        "nur": "nur",
         "sops-nix": "sops-nix",
         "stylix": "stylix"
       }

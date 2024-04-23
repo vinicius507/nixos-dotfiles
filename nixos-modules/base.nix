@@ -34,6 +34,9 @@
       };
       sops.defaultSopsFile = ../secrets/default.yaml;
     };
+    extraSpecialArgs = {
+      inherit inputs outputs;
+    };
   };
 
   programs.fish.enable = true;
