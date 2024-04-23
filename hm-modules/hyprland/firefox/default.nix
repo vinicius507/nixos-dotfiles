@@ -22,8 +22,10 @@ in {
     };
     profiles.default = {
       id = 0;
-      name = "Dezano";
       settings = {
+        "extensions.bitwarden.enabled" = true;
+        "extensions.darkreader.enabled" = true;
+        "extensions.tabcenter-reborn.enabled" = true;
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         "svg.context-properties.content.enabled" = true;
       };
@@ -37,4 +39,5 @@ in {
       ];
     };
   };
+  stylix.targets.firefox.profileNames = ["default"];
 }
