@@ -7,6 +7,12 @@ return {
 		end,
 	},
 	{
+		"folke/flash.nvim",
+		keys = {
+			{ "s", mode = { "n", "x", "o" }, false },
+		},
+	},
+	{
 		"ThePrimeagen/harpoon",
 		import = "lazyvim.plugins.extras.editor.harpoon2",
 		keys = {
