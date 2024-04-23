@@ -60,7 +60,7 @@
           mkdir -p /tmp/nvim-dev/config
           [ -L /tmp/nvim-dev/config/git ] && [ -e /tmp/nvim-dev/config/git ] || ln -sf $HOME/.config/git /tmp/nvim-dev/config/git
           [ -L /tmp/nvim-dev/config/fish ] && [ -e /tmp/nvim-dev/config/fish ] || ln -sf $HOME/.config/fish /tmp/nvim-dev/config/fish
-          [ -L /tmp/nvim-dev/config/nvim ] && [ -e /tmp/nvim-dev/config/nvim ] || ln -sf ./hm-modules/neovim/config /tmp/nvim-dev/config/nvim
+          [ -L /tmp/nvim-dev/config/nvim ] && [ -e /tmp/nvim-dev/config/nvim ] || ln -sf $(git rev-parse --show-toplevel)/hm-modules/neovim/config /tmp/nvim-dev/config/nvim
         fi
       '';
       NIX_CONFIG = "extra-experimental-features = nix-command flakes";
