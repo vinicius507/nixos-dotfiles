@@ -31,10 +31,8 @@ in {
       general = {
         gaps_in = 5;
         gaps_out = 20;
-        border_size = 2;
+        border_size = 0;
         layout = "dwindle";
-        "col.active_border" = lib.mkForce "rgb(${colors.base03})";
-        "col.inactive_border" = lib.mkForce "rgb(${colors.base00})";
       };
       exec-once = [
         "${pkgs.mako}/bin/mako"
@@ -42,6 +40,8 @@ in {
         "${lib.getExe pkgs.waybar}"
       ];
       decoration = {
+        active_opacity = 1;
+        inactive_opacity = 0.8;
         blur = {
           enabled = true;
           size = 6;
@@ -49,7 +49,7 @@ in {
           xray = true;
           ignore_opacity = true;
         };
-        rounding = 0;
+        rounding = 5;
         drop_shadow = true;
         shadow_range = 4;
         shadow_render_power = 3;
@@ -76,7 +76,7 @@ in {
         ];
       };
       dwindle = {
-        no_gaps_when_only = 1;
+        # no_gaps_when_only = 1;
         pseudotile = true;
         preserve_split = true;
       };
