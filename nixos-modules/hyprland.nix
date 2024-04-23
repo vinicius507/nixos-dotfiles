@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: {
-  home-manager.users.vini.imports = [
+  home-manager.sharedModules = [
     outputs.homeManagerModules.hyprland
   ];
   programs.hyprland = {

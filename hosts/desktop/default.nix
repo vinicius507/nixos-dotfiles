@@ -41,12 +41,12 @@
     zoom-us
   ];
 
-  home-manager.users.vini = {
-    imports = [
-      outputs.homeManagerModules.vscode
-    ];
-    services.mpris-proxy.enable = true;
-  };
+  home-manager.sharedModules = [
+    outputs.homeManagerModules.vscode
+    {
+      services.mpris-proxy.enable = true;
+    }
+  ];
 
   hardware.bluetooth = {
     enable = true;
