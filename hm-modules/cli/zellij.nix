@@ -5,5 +5,5 @@
       default_layout = "compact";
     };
   };
-  home.packages = with pkgs.zellijUtils; [edit];
+  home.packages = [pkgs.zellij-edit];
 }

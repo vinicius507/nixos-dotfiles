@@ -5,7 +5,6 @@
   ...
 }: let
   inherit (config.lib.stylix) colors;
-  inherit (pkgs.waylandUtils) screenshot;
 in {
   imports = [
     ./foot.nix
@@ -88,7 +87,7 @@ in {
       "$mod" = "SUPER";
       bind = [
         "$mod, Space, exec, rofi -show drun"
-        "$mod, R, exec, ${lib.getExe pkgs.rofiUtils.run}"
+        "$mod, R, exec, ${lib.getExe pkgs.rofi-run}"
         "$mod, Return, exec, foot"
         "$mod SHIFT, Return, exec, [float] foot"
         "$mod SHIFT, C, killactive,"
@@ -126,8 +125,8 @@ in {
         "$mod SHIFT, S, movetoworkspace, special"
         "$mod, mouse_down, workspace, e+1"
         "$mod, mouse_up, workspace, e-1"
-        ", Print, exec, ${lib.getExe screenshot} section"
-        "SHIFT, Print, exec, ${lib.getExe screenshot} full"
+        ", Print, exec, ${lib.getExe pkgs.wl-screenshot} section"
+        "SHIFT, Print, exec, ${lib.getExe pkgs.wl-screenshot} full"
       ];
       bindm = [
         "$mod, mouse:272, movewindow"
