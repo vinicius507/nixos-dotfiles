@@ -1,6 +1,25 @@
 ---@type LazySpec
 return {
 	{
+		"vinicius507/header42.nvim",
+		cond = function()
+			if vim.fn.fnamemodify(vim.fn.getcwd(), ":t") == "42sp" then
+				return true
+			end
+
+			local projects_dir = vim.fs.find("42sp", {
+				upward = true,
+				stop = vim.uv.os_homedir(),
+				type = "directory",
+			})
+			return #projects_dir > 1
+		end,
+		opts = {
+			login = "vgoncalv",
+			email = "vgoncalv@student.42sp.org.br",
+		},
+	},
+	{
 		"mateusbraga/vim-spell-pt-br",
 		config = function()
 			vim.opt.spelllang:append("pt_br")
