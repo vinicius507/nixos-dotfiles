@@ -2,12 +2,6 @@
 return {
 	{ import = "lazyvim.plugins.extras.coding.copilot" },
 	{
-		"L3MON4D3/LuaSnip",
-		config = function()
-			require("luasnip.loaders.from_vscode").lazy_load()
-		end,
-	},
-	{
 		"zbirenbaum/copilot.lua",
 		lazy = false,
 		build = ":Copilot auth",
