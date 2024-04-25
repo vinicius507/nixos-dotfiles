@@ -14,6 +14,7 @@
     };
     functions = {
       gitignore = "${pkgs.curl}/bin/curl -sL https://gitignore.io/api/$argv";
+      nvim-ssh = "${pkgs.neovim}/bin/nvim oil-ssh://$argv";
     };
   };
 }
