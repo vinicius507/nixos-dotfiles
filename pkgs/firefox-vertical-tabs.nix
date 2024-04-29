@@ -10,7 +10,7 @@ stdenv.mkDerivation rec {
     owner = "ranmaru22";
     repo = "firefox-vertical-tabs";
     rev = "v${version}";
-    hash = "sha256-vVDw/TyPlVIiKezb3Ac+bGSQqVdQwCRRFVGEkUwLs7c=";
+    hash = "sha256-DHI8QFr4z00tlS8SlWrrNymP6pRQ55YHq6ZegDx5iYk=";
   };
   installPhase = ''
     ls -l *
