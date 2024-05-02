@@ -12,7 +12,7 @@ return {
 				stop = vim.uv.os_homedir(),
 				type = "directory",
 			})
-			return #projects_dir > 1
+			return #projects_dir > 0
 		end,
 		opts = {
 			login = "vgoncalv",
