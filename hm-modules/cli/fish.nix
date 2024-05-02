@@ -11,10 +11,11 @@
     '';
     shellAliases = {
       lg = "${pkgs.lazygit}/bin/lazygit";
+      nv = "${pkgs.neovim}/bin/nvim";
     };
     functions = {
       gitignore = "${pkgs.curl}/bin/curl -sL https://gitignore.io/api/$argv";
-      nvim-ssh = "${pkgs.neovim}/bin/nvim oil-ssh://$argv";
+      nv-ssh = "${pkgs.neovim}/bin/nvim oil-ssh://$argv";
     };
   };
 }
