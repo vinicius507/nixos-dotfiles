@@ -22,7 +22,9 @@ return {
 	},
 	{
 		"ThePrimeagen/harpoon",
-		import = "lazyvim.plugins.extras.editor.harpoon2",
+		dependencies = {
+			{ import = "lazyvim.plugins.extras.editor.harpoon2" },
+		},
 		keys = {
 			{ "<Leader>h", false },
 			{ "<Leader>H", false },

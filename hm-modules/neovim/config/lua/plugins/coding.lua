@@ -1,11 +1,13 @@
 ---@type LazySpec
 return {
-	{ import = "lazyvim.plugins.extras.coding.copilot" },
 	{
 		"zbirenbaum/copilot.lua",
 		lazy = false,
 		build = ":Copilot auth",
 		enabled = vim.env.DOTFILES_DEV and false,
+		dependencies = {
+			{ import = "lazyvim.plugins.extras.coding.copilot" },
+		},
 		opts = {
 			suggestion = {
 				enabled = true,
