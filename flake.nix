@@ -44,6 +44,11 @@
         self.nixosModules.gaming
         self.nixosModules.hyprland
       ];
+      minipc = mkHost [
+        ./hosts/minipc
+        self.nixosModules.hyprland
+        self.nixosModules.gaming
+      ];
       nixosVm = mkHost [
         self.nixosModules.hyprland
         self.nixosModules.vm

@@ -22,7 +22,6 @@
           "--time"
           "--remember-session"
           "--sessions ${config.services.xserver.displayManager.sessionData.desktops}/share/wayland-sessions"
-          "--cmd Hyprland"
         ];
       };
     };
