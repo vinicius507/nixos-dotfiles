@@ -1,10 +1,12 @@
 keys:
   - &vini 2241DDE7BE678A7EB70377F43F076A144E1B7B28
   - &desktop age187qq0tg2d7pzs0nf9xhqp4j28feztsn5qzcvsamepnysa8duhqgqwm53es
+  - &minipc age1p7z2hzrh6cywxy9xv042ev926eplwzvs2zy8rccj8hdeatnngu7s5acpyx
 creation_rules:
-  - path_regex: secrets/[^/]+\.yaml 
+  - path_regex: secrets/[^/]+\.yaml
     key_groups:
       - pgp:
-        - *vini
+          - *vini
         age:
-        - *desktop
+          - *desktop
+          - *minipc
