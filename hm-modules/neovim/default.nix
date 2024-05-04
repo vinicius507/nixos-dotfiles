@@ -4,15 +4,18 @@
     extraPackages = with pkgs; [
       alejandra
       gcc
+      gopls
       lua-language-server
       markdownlint-cli
       marksman
       nil
       shfmt
       stylua
+      tailwindcss-language-server
       unzip
       vscode-langservers-extracted
       yaml-language-server
+      nodePackages.typescript-language-server
     ];
     vimAlias = true;
     withNodeJs = true;
