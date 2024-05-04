@@ -26,6 +26,7 @@
   };
 
   networking.hostName = "minipc";
+  networking.networkmanager.wifi.powersave = false;
 
   nixpkgs.config.allowUnfree = true;
 
