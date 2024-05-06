@@ -115,6 +115,7 @@ return {
 			},
 		},
 		opts = function(_, opts)
+			local actions = require("telescope.actions")
 			local dropdown = function()
 				return require("telescope.themes").get_dropdown({
 					borderchars = {
@@ -128,9 +129,16 @@ return {
 					prompt_title = false,
 				})
 			end
+
 			return vim.tbl_deep_extend("force", opts, {
 				defaults = {
 					prompt_prefix = "   ",
+					mappings = {
+						i = {
+							["<C-j>"] = actions.move_selection_next,
+							["<C-k>"] = actions.move_selection_previous,
+						},
+					},
 				},
 				pickers = {
 					buffers = dropdown(),
