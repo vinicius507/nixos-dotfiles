@@ -7,6 +7,7 @@
     ignores = [
       ".cache/"
       ".direnv/"
+      ".devenv/"
       ".envrc"
       ".vscode/"
       ".lazy.lua"
