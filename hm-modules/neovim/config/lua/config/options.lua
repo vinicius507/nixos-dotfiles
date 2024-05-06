@@ -19,5 +19,3 @@ opt.listchars = {
 	trail = "~",
 }
 opt.shortmess:append({ s = true })
-
-opt.spell = true
