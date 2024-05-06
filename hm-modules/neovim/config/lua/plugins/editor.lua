@@ -107,22 +107,44 @@ return {
 								return
 							end
 
-							require("telescope.builtin").find_files({
-								cwd = path,
-							})
+							LazyVim.telescope("files", { cwd = path })()
 						end
 					)
 				end,
 				desc = "Find in path",
 			},
 		},
-		opts = {
-			extensions = {
-				fzy_native = {
-					override_generic_sorter = false,
-					override_file_sorter = true,
+		opts = function(_, opts)
+			local dropdown = function()
+				return require("telescope.themes").get_dropdown({
+					borderchars = {
+						{ "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+						prompt = { "─", "│", " ", "│", "┌", "┐", "│", "│" },
+						results = { "─", "│", "─", "│", "├", "┤", "┘", "└" },
+						preview = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+					},
+					width = 0.8,
+					previewer = false,
+					prompt_title = false,
+				})
+			end
+			return vim.tbl_deep_extend("force", opts, {
+				defaults = {
+					prompt_prefix = "   ",
 				},
-			},
-		},
+				pickers = {
+					buffers = dropdown(),
+					find_files = dropdown(),
+					git_files = dropdown(),
+					oldfiles = dropdown(),
+				},
+				extensions = {
+					fzy_native = {
+						override_generic_sorter = false,
+						override_file_sorter = true,
+					},
+				},
+			})
+		end,
 	},
 }
