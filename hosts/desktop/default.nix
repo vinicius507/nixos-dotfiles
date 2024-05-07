@@ -50,6 +50,10 @@
           uris = ["qemu:///system"];
         };
       };
+      programs.git.signing = {
+        signByDefault = true;
+        key = "AD3ED787366ACED9";
+      };
       services.mpris-proxy.enable = true;
     }
   ];

@@ -12,10 +12,6 @@
       ".vscode/"
       ".lazy.lua"
     ];
-    signing = {
-      signByDefault = true;
-      key = "AD3ED787366ACED9";
-    };
     extraConfig = {
       init.defaultBranch = "main";
       github.user = "vinicius507";
