@@ -4,6 +4,7 @@ local map = LazyVim.safe_keymap_set
 vim.keymap.del("n", "<C-_>")
 vim.keymap.del("n", "<leader>ft")
 vim.keymap.del("n", "<leader>fT")
+vim.keymap.del("n", "<leader>gG")
 
 -- Thanks to the primeagen for these gems
 -- Better Cursor positioning in search
