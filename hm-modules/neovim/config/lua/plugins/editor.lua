@@ -81,6 +81,16 @@ return {
 		},
 	},
 	{
+		"akinsho/toggleterm.nvim",
+		version = "*",
+		config = true,
+		cmd = { "ToggleTerm", "ToggleTermToggleAll", "TermExec", "TermSelect" },
+		keys = {
+			{ "<C-/>", [[<esc><cmd>ToggleTerm<cr>]], mode = "i", desc = "Toggle Terminal" },
+			{ "<C-/>", [[<cmd>execute v:count . "ToggleTerm"<cr>]], desc = "Toggle Terminal" },
+		},
+	},
+	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = {
 			{

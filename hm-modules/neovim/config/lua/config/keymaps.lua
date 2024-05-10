@@ -1,10 +1,9 @@
 local map = LazyVim.safe_keymap_set
 
-local terminal = function()
-	LazyVim.terminal()
-end
-
-map("n", "<C-/>", terminal, { desc = "Terminal" })
+-- Removes default terminal bindings
+vim.keymap.del("n", "<C-_>")
+vim.keymap.del("n", "<leader>ft")
+vim.keymap.del("n", "<leader>fT")
 
 -- Thanks to the primeagen for these gems
 -- Better Cursor positioning in search
