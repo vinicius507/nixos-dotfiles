@@ -15,6 +15,6 @@ return {
 		args = args or {}
 		local cmd = { "lazygit", unpack(args) }
 
-		Terminal:new({ cmd = vim.fn.join(cmd), direction = "float", close_on_exit = true, hidden = true }):toggle()
+		Terminal:new({ cmd = vim.fn.join(cmd), direction = "float", hidden = true }):toggle()
 	end,
 }
