@@ -52,8 +52,6 @@
     jack.enable = true;
   };
 
-  sops.secrets."users/vini/password".neededForUsers = true;
-
   users.users.vini.hashedPasswordFile = config.sops.secrets."users/vini/password".path;
 
   users.extraGroups.docker.members = ["vini"];

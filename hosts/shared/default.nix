@@ -115,7 +115,10 @@
     ''
   ];
 
-  sops.defaultSopsFile = ../../secrets/default.yaml;
+  sops = {
+    defaultSopsFile = ../../secrets/default.yaml;
+    secrets."users/vini/password".neededForUsers = true;
+  };
 
   stylix = {
     polarity = "dark";

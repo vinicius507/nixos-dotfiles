@@ -61,8 +61,6 @@
     };
   };
 
-  security.rtkit.enable = true;
-
   programs.virt-manager.enable = true;
 
   services.pipewire = {
@@ -75,7 +73,7 @@
     jack.enable = true;
   };
 
-  sops.secrets."users/vini/password".neededForUsers = true;
+  security.rtkit.enable = true;
 
   users = {
     users.vini.hashedPasswordFile = config.sops.secrets."users/vini/password".path;
