@@ -19,6 +19,7 @@
     shell = pkgs.fish;
     extraGroups = ["wheel"];
   };
+
   home-manager = {
     sharedModules = [
       inputs.sops-nix.homeManagerModules.sops
@@ -32,7 +33,7 @@
         BROWSER = "google-chrome-stable";
         EDITOR = "nvim";
       };
-      sops.defaultSopsFile = ../secrets/default.yaml;
+      sops.defaultSopsFile = ../../secrets/default.yaml;
     };
     extraSpecialArgs = {
       inherit inputs outputs;
@@ -77,7 +78,7 @@
 
   nixpkgs.overlays = builtins.attrValues outputs.overlays;
 
-  sops.defaultSopsFile = ../secrets/default.yaml;
+  sops.defaultSopsFile = ../../secrets/default.yaml;
 
   stylix = {
     polarity = "dark";
@@ -132,6 +133,4 @@
       -----END CERTIFICATE-----
     ''
   ];
-
-  system.stateVersion = "23.11";
 }

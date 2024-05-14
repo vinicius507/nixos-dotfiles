@@ -21,6 +21,20 @@
     withNodeJs = true;
     withRuby = false;
   };
+  systemd.user.services.neovim-server = {
+    Unit = {
+      Description = "Neovim server";
+    };
+    Install = {
+      WantedBy = ["default.target"];
+    };
+    Service = {
+      Type = "simple";
+      ExecStart = "${pkgs.neovim}/bin/nvim --headless --listen 127.0.0.1:1010";
+      Restart = "always";
+      RestartSec = "3";
+    };
+  };
   xdg.configFile."nvim" = {
     source = ./config;
     recursive = true;

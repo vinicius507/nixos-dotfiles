@@ -26,7 +26,7 @@
     mkHost = modules:
       nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [self.nixosModules.base] ++ modules;
+        modules = [./hosts/shared] ++ modules;
         specialArgs = {inherit inputs outputs;};
       };
   in {
@@ -52,10 +52,6 @@
         ./hosts/minipc
         self.nixosModules.hyprland
         self.nixosModules.gaming
-      ];
-      nixosVm = mkHost [
-        self.nixosModules.hyprland
-        self.nixosModules.vm
       ];
     };
     homeManagerModules = import ./hm-modules;

@@ -96,4 +96,6 @@
       qemu.package = pkgs.qemu_kvm;
     };
   };
+
+  system.stateVersion = "23.11";
 }

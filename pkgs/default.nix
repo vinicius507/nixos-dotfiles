@@ -2,8 +2,6 @@
   outputs,
   pkgs,
 }: {
-  nixosVm = outputs.nixosConfigurations.nixosVm.config.system.build.vm;
-
   firefox-vertical-tabs = import ./firefox-vertical-tabs.nix {
     inherit (pkgs) lib fetchFromGitHub;
     stdenv = pkgs.stdenvNoCC;
