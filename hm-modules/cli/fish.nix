@@ -11,7 +11,6 @@
     '';
     shellAliases = {
       lg = "${pkgs.lazygit}/bin/lazygit";
-      nv = "${pkgs.neovim}/bin/nvim";
     };
     functions = {
       gitignore = "${pkgs.curl}/bin/curl -sL https://gitignore.io/api/$argv";
