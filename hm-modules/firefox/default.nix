@@ -36,6 +36,7 @@ in {
         bitwarden
         darkreader
         tabcenter-reborn
+        ublock-origin
       ];
     };
   };

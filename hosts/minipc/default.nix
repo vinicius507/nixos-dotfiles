@@ -1,6 +1,5 @@
 {
   inputs,
-  outputs,
   config,
   ...
 }: {
@@ -29,7 +28,6 @@
   networking.networkmanager.wifi.powersave = false;
 
   home-manager.sharedModules = [
-    outputs.homeManagerModules.vscode
     {
       services.mpris-proxy.enable = true;
     }

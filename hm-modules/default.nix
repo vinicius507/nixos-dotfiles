@@ -34,6 +34,7 @@
       tree
     ];
   };
+  firefox = import ./firefox;
   hyprland = import ./hyprland;
   vscode = import ./vscode;
 }

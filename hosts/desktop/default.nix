@@ -1,6 +1,5 @@
 {
   inputs,
-  outputs,
   config,
   pkgs,
   ...
@@ -40,7 +39,6 @@
   ];
 
   home-manager.sharedModules = [
-    outputs.homeManagerModules.vscode
     {
       dconf.settings = {
         "org/virt-manager/virt-manager/connections" = {

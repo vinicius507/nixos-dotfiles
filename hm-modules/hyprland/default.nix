@@ -5,7 +5,6 @@
   ...
 }: {
   imports = [
-    ./firefox
     ./foot.nix
     ./gtk.nix
     ./mako.nix

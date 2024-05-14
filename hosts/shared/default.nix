@@ -24,6 +24,8 @@
       inputs.sops-nix.homeManagerModules.sops
       outputs.homeManagerModules.base
       outputs.homeManagerModules.cli
+      outputs.homeManagerModules.firefox
+      outputs.homeManagerModules.vscode
     ];
     useGlobalPkgs = true;
     useUserPackages = true;
