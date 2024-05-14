@@ -1,5 +1,6 @@
 ---@type LazySpec
 return {
+	"direnv/direnv.vim",
 	{
 		"vinicius507/header42.nvim",
 		cmd = { "Stdheader" },
