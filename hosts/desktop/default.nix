@@ -22,6 +22,8 @@
     };
   };
 
+  desktop.hyprland.enable = true;
+
   entertainment.steam.enable = true;
 
   networking.hostName = "desktop";

@@ -3,9 +3,7 @@
   lib,
   pkgs,
   ...
-}: let
-  inherit (config.lib.stylix) colors;
-in {
+}: {
   imports = [
     ./firefox
     ./foot.nix

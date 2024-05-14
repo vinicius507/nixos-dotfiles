@@ -1,6 +1,7 @@
 {
   inputs,
   outputs,
+  config,
   lib,
   pkgs,
   ...
@@ -68,15 +69,31 @@
 
   programs.fish.enable = true;
 
-  services.openssh = {
-    enable = true;
-    settings = {
-      PasswordAuthentication = false;
-      PermitRootLogin = "no";
+  services = {
+    gnome.gnome-keyring.enable = true;
+    greetd = {
+      enable = true;
+      settings = {
+        default_session = {
+          user = "greeter";
+          command = builtins.concatStringsSep " " [
+            "${pkgs.greetd.tuigreet}/bin/tuigreet"
+            "--time"
+            "--remember-session"
+            "--sessions ${config.services.displayManager.sessionData.desktops}/share/wayland-sessions"
+          ];
+        };
+      };
     };
+    openssh = {
+      enable = true;
+      settings = {
+        PasswordAuthentication = false;
+        PermitRootLogin = "no";
+      };
+    };
+    tailscale.enable = true;
   };
-
-  services.tailscale.enable = true;
 
   security.pki.certificates = [
     ''
