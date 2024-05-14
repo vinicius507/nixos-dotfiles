@@ -73,6 +73,13 @@ return {
 		cmd = "Oil",
 		keys = {
 			{ "-", vim.cmd.Oil, desc = "Oil.nvim" },
+			{
+				"<Leader>-",
+				function()
+					vim.cmd.Oil(vim.fn.getcwd())
+				end,
+				desc = "Oil.nvim",
+			},
 		},
 		opts = {
 			keymaps = {
