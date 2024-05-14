@@ -14,6 +14,34 @@ return {
 		},
 	},
 	{
+		"nvimdev/dashboard-nvim",
+		opts = {
+			config = {
+				center = {
+					{
+						action = LazyVim.telescope("files"),
+						desc = " Find File",
+						icon = " ",
+						key = "f",
+					},
+					{
+						action = "ene | startinsert",
+						desc = " New File",
+						icon = " ",
+						key = "n",
+					},
+					{
+						action = 'lua require("persistence").load()',
+						desc = " Restore Session",
+						icon = " ",
+						key = "s",
+					},
+				},
+				footer = {},
+			},
+		},
+	},
+	{
 		"nvim-lualine/lualine.nvim",
 		opts = function(_, opts)
 			return vim.tbl_deep_extend("force", opts, {
