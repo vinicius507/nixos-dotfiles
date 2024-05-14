@@ -27,6 +27,7 @@
   };
 
   networking.hostName = "desktop";
+  entertainment.steam.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 

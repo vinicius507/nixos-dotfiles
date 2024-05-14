@@ -25,6 +25,8 @@
     tmp.useTmpfs = true;
   };
 
+  entertainment.steam.enable = true;
+
   networking.hostName = "minipc";
   networking.networkmanager.wifi.powersave = false;
 

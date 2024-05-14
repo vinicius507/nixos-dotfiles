@@ -45,13 +45,13 @@
     nixosConfigurations = {
       desktop = mkHost [
         ./hosts/desktop
-        self.nixosModules.gaming
         self.nixosModules.hyprland
+        self.nixosModules.steam
       ];
       minipc = mkHost [
         ./hosts/minipc
         self.nixosModules.hyprland
-        self.nixosModules.gaming
+        self.nixosModules.steam
       ];
     };
     homeManagerModules = import ./hm-modules;
