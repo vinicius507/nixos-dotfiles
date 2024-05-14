@@ -1,12 +1,16 @@
 {
   inputs = {
-    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/*.tar.gz";
-    home-manager.url = "https://flakehub.com/f/nix-community/home-manager/*.tar.gz";
-    nixos-hardware.url = "https://flakehub.com/f/NixOS/nixos-hardware/*.tar.gz";
-    sops-nix.url = "https://flakehub.com/f/Mic92/sops-nix/*.tar.gz";
-    stylix.url = "https://flakehub.com/f/danth/stylix/=0.1.285.tar.gz";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixos-hardware.url = "github:NixOS/nixos-hardware";
     nur.url = "github:nix-community/NUR";
+    sops-nix.url = "github:Mic92/sops-nix";
+    stylix.url = "github:danth/stylix";
   };
+
   outputs = {
     self,
     nixpkgs,

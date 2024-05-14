@@ -22,7 +22,7 @@ in {
         urgent = mkLiteral "#${colors.base08}";
       };
       window = {
-        anchor = "center";
+        anchor = "north";
         location = "center";
         transparency = "real";
         fullscreen = false;
@@ -53,7 +53,7 @@ in {
         enabled = true;
         expand = false;
         str = "";
-        padding = mkLiteral "12px 0px 12px 15px";
+        padding = mkLiteral "12px 8px 12px 15px";
         text-color = mkLiteral "@accent";
         background-color = mkLiteral "transparent";
       };

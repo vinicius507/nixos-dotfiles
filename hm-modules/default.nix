@@ -1,5 +1,5 @@
 {
-  base = {
+  base = {pkgs, ...}: {
     home.username = "vini";
     home.homeDirectory = "/home/vini";
     home.stateVersion = "23.11";
@@ -7,7 +7,7 @@
     programs.gpg.enable = true;
     services.gpg-agent = {
       enable = true;
-      pinentryFlavor = "curses";
+      pinentryPackage = pkgs.pinentry-curses;
     };
     systemd.user.tmpfiles.rules = [
       "d %t/downloads 0700 - - - -"

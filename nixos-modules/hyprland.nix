@@ -21,7 +21,7 @@
           "${pkgs.greetd.tuigreet}/bin/tuigreet"
           "--time"
           "--remember-session"
-          "--sessions ${config.services.xserver.displayManager.sessionData.desktops}/share/wayland-sessions"
+          "--sessions ${config.services.displayManager.sessionData.desktops}/share/wayland-sessions"
         ];
       };
     };

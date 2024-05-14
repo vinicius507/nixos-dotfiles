@@ -5,4 +5,5 @@
       theme = "catppuccin-mocha";
     };
   };
+  stylix.targets.bat.enable = false;
 }
