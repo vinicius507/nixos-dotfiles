@@ -9,11 +9,3 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.b.autoformat = false
 	end,
 })
-
-vim.api.nvim_create_autocmd("BufAdd", {
-	pattern = { ".env*" },
-	group = augroup("env_filetype"),
-	callback = function()
-		vim.bo.filetype = "bash"
-	end,
-})
