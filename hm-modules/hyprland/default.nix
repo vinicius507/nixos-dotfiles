@@ -16,6 +16,16 @@
     wl-clipboard
     xdg-utils
   ];
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      ipc = "on";
+      preload = ["${config.stylix.image}"];
+      wallpaper = [
+        ",${config.stylix.image}"
+      ];
+    };
+  };
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -33,7 +43,6 @@
       };
       exec-once = [
         "${pkgs.mako}/bin/mako"
-        "${lib.getExe pkgs.swaybg} -m fill -i ${config.stylix.image}"
         "${lib.getExe pkgs.waybar}"
       ];
       decoration = {
