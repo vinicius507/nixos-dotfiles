@@ -10,6 +10,7 @@
       end
     '';
     shellAliases = {
+      cat = "${pkgs.bat}/bin/bat";
       lg = "${pkgs.lazygit}/bin/lazygit";
     };
     functions = {
