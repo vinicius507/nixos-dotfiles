@@ -42,6 +42,38 @@ in {
       search = {
         force = true;
         engines = {
+          "Docker Hub" = {
+            definedAliases = ["@dh"];
+            updateInterval = 24 * 60 * 60 * 1000;
+            iconUpdateURL = "https://hub.docker.com/favicon.ico";
+            urls = [
+              {
+                template = "https://hub.docker.com/search";
+                params = [
+                  {
+                    name = "q";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
+          };
+          "Github" = {
+            definedAliases = ["@gh"];
+            updateInterval = 24 * 60 * 60 * 1000;
+            iconUpdateURL = "https://github.githubassets.com/favicons/favicon-dark.svg";
+            urls = [
+              {
+                template = "https://github.com/search";
+                params = [
+                  {
+                    name = "q";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
+          };
           "Nix Packages" = {
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = ["@np"];
@@ -66,6 +98,21 @@ in {
                 params = [
                   {
                     name = "query";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
+          };
+          "NixOS Wiki" = {
+            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = ["@nw"];
+            urls = [
+              {
+                template = "https://wiki.nixos.org/index.php";
+                params = [
+                  {
+                    name = "search";
                     value = "{searchTerms}";
                   }
                 ];
