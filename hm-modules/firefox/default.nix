@@ -23,6 +23,7 @@ in {
     profiles.default = {
       id = 0;
       settings = {
+        "browser.startup.homepage" = "https://dezano.io";
         "extensions.bitwarden.enabled" = true;
         "extensions.darkreader.enabled" = true;
         "extensions.tabcenter-reborn.enabled" = true;

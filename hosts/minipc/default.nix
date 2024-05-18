@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+    ./services
     inputs.nixos-hardware.nixosModules.common-cpu-amd
     inputs.nixos-hardware.nixosModules.common-gpu-amd
   ];
