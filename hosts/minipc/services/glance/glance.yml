@@ -18,6 +18,7 @@ pages:
             cache: 3h
             feeds:
               - url: https://dotfyle.com/this-week-in-neovim/rss.xml
+              - url: https://memos.dezano.io/u/vini/rss.xml
               - url: https://www.tabnews.com.br/recentes/rss
 
           - type: twitch-channels
