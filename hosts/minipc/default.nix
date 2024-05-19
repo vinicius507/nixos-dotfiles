@@ -57,7 +57,10 @@
 
   users.extraGroups.docker.members = ["vini"];
 
-  virtualisation.docker.enable = true;
+  virtualisation = {
+    docker.enable = true;
+    oci-containers.backend = "docker";
+  };
 
   system.stateVersion = "23.11";
 }
