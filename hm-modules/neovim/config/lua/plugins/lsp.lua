@@ -2,7 +2,7 @@ return {
 	{
 		"nvim-lspconfig",
 		opts = {
-			inlay_hints = { enabled = true },
+			codelens = { enabled = true },
 			servers = {
 				nil_ls = {},
 			},
