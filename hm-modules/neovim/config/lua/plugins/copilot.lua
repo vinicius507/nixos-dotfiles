@@ -1,5 +1,4 @@
 return {
-	{ import = "lazyvim.plugins.extras.coding.copilot" },
 	{
 		"zbirenbaum/copilot.lua",
 		lazy = false,
