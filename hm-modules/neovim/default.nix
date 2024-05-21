@@ -9,6 +9,7 @@
       markdownlint-cli
       marksman
       nil
+      norminette
       shfmt
       stylua
       tailwindcss-language-server
