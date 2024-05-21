@@ -31,7 +31,7 @@
     useUserPackages = true;
     users.vini = {
       home.sessionVariables = {
-        BROWSER = "google-chrome-stable";
+        BROWSER = "firefox";
         EDITOR = "nvim";
       };
       sops.defaultSopsFile = ../../secrets/default.yaml;
