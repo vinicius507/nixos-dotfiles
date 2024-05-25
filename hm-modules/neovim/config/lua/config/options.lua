@@ -19,3 +19,6 @@ opt.listchars = {
 	trail = "~",
 }
 opt.shortmess:append({ s = true })
+
+-- Neovide Options
+vim.g.neovide_transparency = 0.8
