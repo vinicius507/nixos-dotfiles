@@ -16,6 +16,22 @@ return {
 					key = "n",
 				},
 				{
+					action = function()
+						vim.ui.input({
+							prompt = "Open Folder",
+							completion = "dir",
+						}, function(path)
+							if path == nil then
+								return
+							end
+							vim.cmd.Oil({ args = { path } })
+						end)
+					end,
+					desc = " Open folder",
+					icon = "󰉋 ",
+					key = "o",
+				},
+				{
 					action = 'lua require("persistence").load()',
 					desc = " Restore Session",
 					icon = " ",
