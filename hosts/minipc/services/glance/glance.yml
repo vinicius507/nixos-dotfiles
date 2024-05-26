@@ -45,9 +45,6 @@ pages:
 
       - size: small
         widgets:
-          - type: weather
-            location: João Pessoa, Brazil
-
           - type: bookmarks
             groups:
               - links:
