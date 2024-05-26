@@ -1,4 +1,7 @@
 {pkgs, ...}: {
+  programs.fish.functions = {
+    nv-ssh = "${pkgs.neovim}/bin/nvim oil-ssh://$argv";
+  };
   programs.neovim = {
     enable = true;
     extraPackages = with pkgs; [

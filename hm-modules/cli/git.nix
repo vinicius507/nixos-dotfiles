@@ -1,4 +1,8 @@
-{
+{pkgs, ...}: {
+  programs.fish.shellAliases = {
+    gitignore = "${pkgs.curl}/bin/curl -sL https://gitignore.io/api/$argv";
+    lg = "${pkgs.lazygit}/bin/lazygit";
+  };
   programs.git = {
     enable = true;
     lfs.enable = true;
