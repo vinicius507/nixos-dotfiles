@@ -38,9 +38,6 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.ui.treesitter-context" },
 		{ import = "lazyvim.plugins.extras.vscode" },
 		{ import = "plugins" },
-
-		-- NOTE: LazyRc must be the last import
-		{ import = "lazyvim.plugins.extras.lazyrc" },
 	},
 	lazy_nvim = {
 		performance = {
