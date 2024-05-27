@@ -18,7 +18,6 @@ pages:
             cache: 3h
             feeds:
               - url: https://dotfyle.com/this-week-in-neovim/rss.xml
-              - url: https://memos.dezano.io/u/vini/rss.xml
               - url: https://www.tabnews.com.br/recentes/rss
 
           - type: twitch-channels
@@ -56,8 +55,13 @@ pages:
                     url: https://reddit.com
                   - title: YouTube
                     url: https://youtube.com
+              - title: Reading
+                links:
+                  - title: Asura Scans
+                    url: https://asuratoon.com
+                  - title: Reaper Scans
+                    url: https://reaperscans.com
               - title: Self-hosted
-                color: 217 92 83
                 links:
                   - title: Actual Budget
                     url: https://actual.dezano.io
