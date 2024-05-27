@@ -104,21 +104,6 @@ in {
               }
             ];
           };
-          "NixOS Wiki" = {
-            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-            definedAliases = ["@nw"];
-            urls = [
-              {
-                template = "https://wiki.nixos.org/index.php";
-                params = [
-                  {
-                    name = "search";
-                    value = "{searchTerms}";
-                  }
-                ];
-              }
-            ];
-          };
         };
       };
     };
