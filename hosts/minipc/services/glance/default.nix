@@ -1,15 +1,150 @@
 {
-  virtualisation.oci-containers.containers.glance = {
-    image = "glanceapp/glance:v0.4.0";
-    environment = {
-      TZ = "America/Sao_Paulo";
+  services.glance = {
+    enable = true;
+    settings = {
+      server.port = 8080;
+      theme = {
+        background-color = "240 21 15";
+        contrast-multiplier = 1.2;
+        primary-color = "217 92 83";
+        positive-color = "115 54 76";
+        negative-color = "347 70 65";
+      };
+      pages = [
+        {
+          name = "Home";
+          columns = [
+            {
+              size = "small";
+              widgets = [
+                {type = "calendar";}
+                {
+                  type = "rss";
+                  limit = 10;
+                  collapse-after = 3;
+                  cache = "3h";
+                  feeds = [
+                    {url = "https://dotfyle.com/this-week-in-neovim/rss.xml";}
+                    {url = "https://www.tabnews.com.br/recentes/rss";}
+                  ];
+                }
+                {
+                  type = "twitch-channels";
+                  channels = [
+                    "casimito"
+                    "gaules"
+                    "theo"
+                    "theprimeagen"
+                  ];
+                }
+              ];
+            }
+            {
+              size = "full";
+              widgets = [
+                {type = "hacker-news";}
+                {
+                  type = "videos";
+                  channels = [
+                    "UCUyeluBRhGPCW4rPe_UvBZQ" # ThePrimeTime
+                    "UCVk4b-svNJoeytrrlOixebQ" # TheVimeagen
+                    "UC4aiJNDUviw_vMhdCq5Kq1Q" # Cortes do Casimito
+                    "UCG2Zgy_atWmy139L_KWiq9w" # OlaGUTI
+                    "UCbRP3c757lWg9M-U7TyEkXA" # Theo
+                  ];
+                }
+                {
+                  type = "reddit";
+                  subreddit = "selfhosted";
+                }
+              ];
+            }
+            {
+              size = "small";
+              widgets = [
+                {
+                  type = "bookmarks";
+                  groups = [
+                    {
+                      links = [
+                        {
+                          title = "Github";
+                          url = "https://github.com";
+                        }
+                        {
+                          title = "Gmail";
+                          url = "https://mail.google.com/mail/u/0";
+                        }
+                        {
+                          title = "Reddit";
+                          url = "https://reddit.com";
+                        }
+                        {
+                          title = "YouTube";
+                          url = "https://youtube.com";
+                        }
+                      ];
+                    }
+                    {
+                      title = "Reading";
+                      links = [
+                        {
+                          title = "Asura Scans";
+                          url = "https://asuratoon.com";
+                        }
+                        {
+                          title = "Reaper Scans";
+                          url = "https://reaperscans.com";
+                        }
+                      ];
+                    }
+                    {
+                      title = "Self-hosted";
+                      links = [
+                        {
+                          title = "Actual Budget";
+                          url = "https://actual.dezano.io";
+                        }
+                        {
+                          title = "Code Server";
+                          url = "https://coder.dezano.io";
+                        }
+                        {
+                          title = "Keycloak";
+                          url = "https://auth.dezano.io";
+                        }
+                        {
+                          title = "Memos";
+                          url = "https://memos.dezano.io";
+                        }
+                        {
+                          title = "Status";
+                          url = "https://status.dezano.io";
+                        }
+                        {
+                          title = "Traefik";
+                          url = "https://traefik.dezano.io";
+                        }
+                      ];
+                    }
+                  ];
+                }
+                {
+                  type = "releases";
+                  repositories = [
+                    "actualbudget/actual"
+                    "coder/code-server"
+                    "glanceapp/glance"
+                    "neovim/neovim"
+                    "NixOS/nixpkgs"
+                    "usememos/memos"
+                  ];
+                }
+              ];
+            }
+          ];
+        }
+      ];
     };
-    ports = [
-      "100.85.134.13:8080:8080"
-    ];
-    volumes = [
-      "${./glance.yml}:/app/glance.yml"
-      "/etc/localtime:/etc/localtime:ro"
-    ];
   };
 }

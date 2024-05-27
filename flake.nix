@@ -50,6 +50,7 @@
       ];
       minipc = mkHost [
         ./hosts/minipc
+        self.nixosModules.glance
         self.nixosModules.hyprland
         self.nixosModules.steam
       ];
