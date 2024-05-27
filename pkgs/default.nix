@@ -7,6 +7,10 @@
     stdenv = pkgs.stdenvNoCC;
   };
 
+  memos-cli = import ./memos-cli.nix {
+    inherit (pkgs) lib buildGoModule fetchFromGitHub;
+  };
+
   rofi-run = import ./rofi-run.nix {
     inherit (pkgs) writeShellScriptBin;
   };

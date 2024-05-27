@@ -40,6 +40,9 @@
         rofi-run = self.packages.${final.system}.rofi-run;
         wl-screenshot = self.packages.${final.system}.wl-screenshot;
       };
+      memos-cli = final: prev: {
+        memos-cli = self.packages.${final.system}.memos-cli;
+      };
     };
     nixosModules = import ./nixos-modules;
     nixosConfigurations = {

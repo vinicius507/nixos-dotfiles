@@ -29,6 +29,7 @@
     home.packages = with pkgs; [
       fd
       fh
+      memos-cli
       ripgrep
       tldr
       tree
