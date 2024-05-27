@@ -24,6 +24,7 @@ return {
 							if path == nil then
 								return
 							end
+							vim.cmd.cd(path)
 							vim.cmd.Oil({ args = { path } })
 						end)
 					end,
