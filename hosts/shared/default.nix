@@ -6,11 +6,13 @@
   pkgs,
   ...
 }: {
-  imports = [
-    inputs.home-manager.nixosModules.home-manager
-    inputs.sops-nix.nixosModules.sops
-    inputs.stylix.nixosModules.stylix
-  ];
+  imports = with inputs;
+    [
+      home-manager.nixosModules.home-manager
+      sops-nix.nixosModules.sops
+      stylix.nixosModules.stylix
+    ]
+    ++ builtins.attrValues outputs.nixosModules;
 
   boot = {
     binfmt.emulatedSystems = ["aarch64-linux"];

@@ -23,10 +23,10 @@
       inherit system;
       overlays = builtins.attrValues self.overlays;
     };
-    mkHost = modules:
+    mkHost = args:
       nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [./hosts/shared] ++ modules;
+        modules = [./hosts/shared] ++ args.modules;
         specialArgs = {inherit inputs outputs;};
       };
   in {
@@ -46,17 +46,16 @@
     };
     nixosModules = import ./nixos-modules;
     nixosConfigurations = {
-      desktop = mkHost [
-        ./hosts/desktop
-        self.nixosModules.hyprland
-        self.nixosModules.steam
-      ];
-      minipc = mkHost [
-        ./hosts/minipc
-        self.nixosModules.glance
-        self.nixosModules.hyprland
-        self.nixosModules.steam
-      ];
+      desktop = mkHost {
+        modules = [
+          ./hosts/desktop
+        ];
+      };
+      minipc = mkHost {
+        modules = [
+          ./hosts/minipc
+        ];
+      };
     };
     homeManagerModules = import ./hm-modules;
     devShells.${system}.default = pkgs.mkShell {
