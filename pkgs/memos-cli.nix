@@ -3,14 +3,14 @@
   buildGoModule,
   fetchFromGitHub,
 }:
-buildGoModule {
+buildGoModule rec {
   pname = "memos-cli";
-  version = "0.1.0";
+  version = "0.1.1";
   src = fetchFromGitHub {
     owner = "vinicius507";
     repo = "memos-cli";
-    rev = "4e73281efd8113f6d356b9a6dbd2f95a116d150e";
-    sha256 = "sha256-ULuLp4TqK4rFfO0f79+8h1ewLicREz3Vp/TG3ZJW3GY=";
+    rev = "v${version}";
+    sha256 = "sha256-KxVpN3ReFkT+3tm9iha/tuCWe4g+Xp4yndqpRgsjd5U=";
   };
   vendorHash = "sha256-du7r9qNu0pNZgQfpMp+YQCl7iayUkxm5FdSAsGZ0DPI=";
   installPhase = ''
