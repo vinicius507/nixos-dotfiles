@@ -11,6 +11,7 @@ return {
 		},
 	},
 	keys = {
+		{ "<Leader><Space>", false },
 		{
 			"<Leader>fp",
 			function()
