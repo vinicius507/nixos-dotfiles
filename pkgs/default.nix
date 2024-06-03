@@ -2,11 +2,6 @@
   outputs,
   pkgs,
 }: {
-  firefox-vertical-tabs = import ./firefox-vertical-tabs.nix {
-    inherit (pkgs) lib fetchFromGitHub;
-    stdenv = pkgs.stdenvNoCC;
-  };
-
   memos-cli = import ./memos-cli.nix {
     inherit (pkgs) lib buildGoModule fetchFromGitHub;
   };
