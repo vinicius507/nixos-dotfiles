@@ -14,3 +14,12 @@ jobs:
         uses: DeterminateSystems/nix-installer-action@main
       - name: Run `nix build`
         run: nix build .#nixosConfigurations.desktop.config.system.build.toplevel
+  minipc:
+    name: Build minipc configuration
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@main
+      - name: Run `nix build`
+        run: nix build .#nixosConfigurations.minipc.config.system.build.toplevel
