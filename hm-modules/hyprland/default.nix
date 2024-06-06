@@ -1,4 +1,5 @@
 {
+  config,
   lib,
   pkgs,
   ...
@@ -17,6 +18,7 @@
     neovide
     wl-clipboard
     xdg-utils
+    catppuccin-cursors.mochaDark
   ];
   wayland.windowManager.hyprland = {
     enable = true;
@@ -33,6 +35,10 @@
         border_size = 0;
         layout = "dwindle";
       };
+      env = [
+        "HYPRCURSOR_THEME,${config.stylix.cursor.name}"
+        "HYPRCURSOR_SIZE,${toString config.stylix.cursor.size}"
+      ];
       exec-once = [
         "${pkgs.mako}/bin/mako"
         "${lib.getExe pkgs.waybar}"
