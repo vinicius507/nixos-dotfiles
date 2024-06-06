@@ -28,6 +28,7 @@
       outputs.homeManagerModules.cli
       outputs.homeManagerModules.firefox
       outputs.homeManagerModules.vscode
+      outputs.homeManagerModules.zed
     ];
     useGlobalPkgs = true;
     useUserPackages = true;
