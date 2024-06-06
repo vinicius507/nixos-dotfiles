@@ -1,24 +1,14 @@
 {
-  config,
   lib,
   pkgs,
   ...
-}: let
-  colors = config.lib.stylix.colors;
-  rgb = color: let
-    red = colors."${color}-rgb-r";
-    green = colors."${color}-rgb-g";
-    blue = colors."${color}-rgb-b";
-  in "rgb(${red}, ${green}, ${blue})";
-  rgba = color: alpha: let
-    red = colors."${color}-rgb-r";
-    green = colors."${color}-rgb-g";
-    blue = colors."${color}-rgb-b";
-  in "rgba(${red}, ${green}, ${blue}, ${alpha})";
-in {
+}: {
   imports = [
     ./foot.nix
     ./gtk.nix
+    ./hypridle.nix
+    ./hyprlock.nix
+    ./hyprpaper.nix
     ./mako.nix
     ./rofi.nix
     ./waybar.nix
@@ -28,83 +18,6 @@ in {
     wl-clipboard
     xdg-utils
   ];
-  programs.hyprlock = {
-    enable = true;
-    settings = {
-      general = {
-        grace = 0;
-        hide_cursor = true;
-        no_fade_in = false;
-        disable_loading_bar = true;
-      };
-      background = [
-        {
-          path = config.stylix.image;
-          blur_passes = 3;
-          blur_size = 8;
-        }
-      ];
-      image = {
-        path = "${./face.jpg}";
-        size = 128;
-        border_size = 0;
-        position = "0, 32";
-        halign = "center";
-        valign = "center";
-        shadow_passes = 1;
-      };
-      input-field = [
-        {
-          size = "180, 42";
-          position = "0, -72";
-          dots_center = true;
-          fade_on_empty = false;
-          font_color = rgb "base05";
-          inner_color = rgba "base05" "0.3";
-          fail_color = rgb "base08";
-          outline_thickness = 0;
-          placeholder_text = "Password";
-          shadow_passes = 1;
-        }
-      ];
-    };
-  };
-  services.hypridle = {
-    enable = true;
-    settings = {
-      general = {
-        after_sleep_cmd = "hyprctl dispatch dpms on";
-        before_sleep_cmd = "loginctl lock-session";
-        lock_cmd = "pidof hyprlock || hyprlock";
-      };
-      listener = [
-        {
-          timeout = 500;
-          on-timeout = "hyprlock";
-        }
-        {
-          timeout = 800;
-          on-timeout = "hyprctl dispatch dpms off";
-          on-resume = "hyprctl dispatch dpms on";
-        }
-        {
-          timeout = 1800;
-          on-timeout = "systemctl suspend";
-        }
-      ];
-    };
-  };
-  services.hyprpaper = {
-    enable = true;
-    settings = {
-      ipc = "on";
-      splash = false;
-      preload = ["${config.stylix.image}"];
-      wallpaper = [
-        ",${config.stylix.image}"
-      ];
-    };
-  };
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
