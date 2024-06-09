@@ -27,6 +27,7 @@
       outputs.homeManagerModules.base
       outputs.homeManagerModules.cli
       outputs.homeManagerModules.firefox
+      outputs.homeManagerModules.neovim
       outputs.homeManagerModules.vscode
       outputs.homeManagerModules.zed
     ];

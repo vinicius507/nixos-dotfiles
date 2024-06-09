@@ -14,29 +14,10 @@
       "L %h/Downloads - - - - %t/downloads"
     ];
   };
-  cli = {pkgs, ...}: {
-    imports = [
-      ./cli/bat.nix
-      ./cli/direnv.nix
-      ./cli/eza.nix
-      ./cli/fish.nix
-      ./cli/git.nix
-      ./cli/helix.nix
-      ./cli/starship.nix
-      ./cli/zellij.nix
-      ./neovim
-    ];
-    home.packages = with pkgs; [
-      fd
-      fh
-      memos-cli
-      ripgrep
-      tldr
-      tree
-    ];
-  };
+  cli = import ./cli;
   firefox = import ./firefox;
   hyprland = import ./hyprland;
+  neovim = import ./neovim;
   vscode = import ./vscode;
   zed = {pkgs, ...}: let
     zed-fhs = pkgs.buildFHSUserEnv {
