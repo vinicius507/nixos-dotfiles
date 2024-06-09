@@ -73,6 +73,10 @@ in {
                 template = "https://search.nixos.org/packages";
                 params = [
                   {
+                    name = "channel";
+                    value = "unstable";
+                  }
+                  {
                     name = "query";
                     value = "{searchTerms}";
                   }
@@ -87,6 +91,10 @@ in {
               {
                 template = "https://search.nixos.org/options";
                 params = [
+                  {
+                    name = "channel";
+                    value = "unstable";
+                  }
                   {
                     name = "query";
                     value = "{searchTerms}";
