@@ -8,6 +8,7 @@ return {
 				mods = { "catppuccin" },
 				words = { "CatppuccinOptions" },
 			},
+			{ path = "LazyVim", words = { "LazyVim" } },
 			{ path = "lazy.nvim", words = { "LazySpec" } },
 			{ path = "lazydev.nvim", words = { "lazydev%.Config" } },
 			{ path = "trouble.nvim", words = { "trouble%.Config" } },
