@@ -15,6 +15,13 @@ return {
 					},
 					view = "cmdline_output",
 				},
+				{
+					filter = {
+						find = "Mason",
+						warning = true,
+					},
+					opts = { skip = true },
+				},
 			})
 			opts.views = { cmdline_output = { enter = true } }
 			opts.commands = {
