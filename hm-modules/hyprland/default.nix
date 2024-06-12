@@ -36,7 +36,7 @@
         layout = "dwindle";
       };
       env = [
-        "HYPRCURSOR_THEME,${config.stylix.cursor.name}"
+        "HYPRCURSOR_THEME,${config.stylix.cursor.name}-hyprland"
         "HYPRCURSOR_SIZE,${toString config.stylix.cursor.size}"
       ];
       exec-once = [

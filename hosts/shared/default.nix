@@ -138,7 +138,7 @@
       terminal = 0.8;
     };
     cursor = {
-      name = "Catppuccin-Mocha-Dark-Cursors";
+      name = "catppuccin-mocha-dark-cursors";
       package = pkgs.catppuccin-cursors.mochaDark;
     };
     fonts = {
