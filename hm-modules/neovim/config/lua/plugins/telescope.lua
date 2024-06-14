@@ -26,7 +26,7 @@ return {
 							return
 						end
 
-						LazyVim.telescope("files", { cwd = path })()
+						LazyVim.pick("files", { cwd = path })()
 					end
 				)
 			end,
