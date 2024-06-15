@@ -9,3 +9,13 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.b.autoformat = false
 	end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = {
+		"gitcommit",
+		"gitrebase",
+		"gitconfig",
+	},
+	group = augroup("git_editor"),
+	command = "set bufhidden=false",
+})

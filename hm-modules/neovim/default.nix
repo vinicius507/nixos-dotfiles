@@ -1,4 +1,5 @@
 {pkgs, ...}: {
+  home.packages = [pkgs.neovim-remote];
   programs.fish.functions = {
     nv-ssh = "${pkgs.neovim}/bin/nvim oil-ssh://$argv";
   };
