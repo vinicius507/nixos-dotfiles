@@ -8,19 +8,19 @@
     extraPackages = with pkgs; [
       alejandra
       gcc
-      gopls
       lua-language-server
       markdownlint-cli
       marksman
       nil
       norminette
+      prettierd
       shfmt
+      sqlfluff
       stylua
       tailwindcss-language-server
       unzip
       vscode-langservers-extracted
       yaml-language-server
-      nodePackages.prettier
       nodePackages.typescript-language-server
     ];
     vimAlias = true;
