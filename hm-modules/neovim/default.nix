@@ -20,6 +20,7 @@
       unzip
       vscode-langservers-extracted
       yaml-language-server
+      nodePackages.prettier
       nodePackages.typescript-language-server
     ];
     vimAlias = true;
