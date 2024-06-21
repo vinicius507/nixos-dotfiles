@@ -35,6 +35,7 @@
     sops
     spotify
     step-cli
+    virtiofsd
     zoom-us
   ];
 
