@@ -39,7 +39,7 @@ return {
 				name = "Norminette",
 				stream = "stdout",
 				parser = require("lint.parser").from_pattern(
-					"(%w+): (.+) +%(line: +(%d+), col: +(%d+)%):\t(.*)",
+					"(%w+): ([^%s]+) +%(line: +(%d+), col: +(%d+)%):\t(.*)",
 					{ "severity", "code", "lnum", "col", "message" },
 					{
 						Notice = vim.diagnostic.severity.WARN,
