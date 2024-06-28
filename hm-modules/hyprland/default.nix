@@ -88,6 +88,10 @@
       gestures.workspace_swipe = false;
       windowrulev2 = [
         "float,class:^(pcmanfm)$"
+        "pin,title:^(Picture-in-Picture)$"
+        "float,title:^(Picture-in-Picture)$"
+        "float,class:^(steam)$,title:^(Friends List)$"
+        "float,class:^(virt-manager)$,title:^(Virtual Machine Manager)$"
       ];
       "$mod" = "SUPER";
       bind = [
