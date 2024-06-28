@@ -1,6 +1,7 @@
 {
   inputs,
   config,
+  pkgs,
   ...
 }: {
   imports = [
@@ -41,6 +42,8 @@
     };
   };
 
+  programs.virt-manager.enable = true;
+
   security.rtkit.enable = true;
 
   services.pipewire = {
@@ -53,13 +56,21 @@
     jack.enable = true;
   };
 
-  users.users.vini.hashedPasswordFile = config.sops.secrets."users/vini/password".path;
-
-  users.extraGroups.docker.members = ["vini"];
+  users = {
+    users.vini.hashedPasswordFile = config.sops.secrets."users/vini/password".path;
+    extraGroups = {
+      docker.members = ["vini"];
+      libvirtd.members = ["vini"];
+    };
+  };
 
   virtualisation = {
     docker.enable = true;
     oci-containers.backend = "docker";
+    libvirtd = {
+      enable = true;
+      qemu.package = pkgs.qemu_kvm;
+    };
   };
 
   system.stateVersion = "23.11";
