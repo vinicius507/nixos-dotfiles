@@ -24,6 +24,21 @@ return {
 				local ext = vim.fn.expand("%:e")
 				return ext == "h" and "--hfile" or "--cfile"
 			end
+			local norme_toggle = function()
+				local enabled = true
+				vim.w.norme_enabled = true
+
+				vim.api.nvim_create_user_command("NormeToggle", function()
+					enabled = not enabled
+					vim.diagnostic.reset()
+					vim.notify(string.format("%s Norme Diagnostics", enabled and "Enabled" or "Disabled"))
+				end, { desc = "Toggle Norme Diagnostics" })
+
+				---@type fun(ctx: {filename: string, dirname: string}): boolean
+				return function(ctx)
+					return enabled and vim.w.norme_enabled and ctx.dirname:find("42sp") ~= nil
+				end
+			end
 
 			---@type lint.Linter
 			opts.linters.norminette = {
@@ -46,6 +61,7 @@ return {
 						Error = vim.diagnostic.severity.ERROR,
 					}
 				),
+				condition = norme_toggle(),
 			}
 
 			opts.linters_by_ft = {
