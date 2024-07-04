@@ -37,6 +37,7 @@
     spotify
     step-cli
     virtiofsd
+    wireshark
     zoom-us
   ];
 
