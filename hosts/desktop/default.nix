@@ -32,6 +32,7 @@
     discord
     google-chrome
     pcmanfm
+    pcsx2
     sops
     spotify
     step-cli
