@@ -26,6 +26,14 @@
 
   entertainment.steam.enable = true;
 
+  environment.systemPackages = with pkgs; [
+    discord
+    google-chrome
+    pcmanfm
+    virtiofsd
+    wireshark
+  ];
+
   networking.hostName = "minipc";
   networking.networkmanager.wifi.powersave = false;
 
