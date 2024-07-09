@@ -19,16 +19,6 @@
               widgets = [
                 {type = "calendar";}
                 {
-                  type = "rss";
-                  limit = 10;
-                  collapse-after = 3;
-                  cache = "3h";
-                  feeds = [
-                    {url = "https://dotfyle.com/this-week-in-neovim/rss.xml";}
-                    {url = "https://www.tabnews.com.br/recentes/rss";}
-                  ];
-                }
-                {
                   type = "twitch-channels";
                   channels = [
                     "casimito"
@@ -54,8 +44,16 @@
                   ];
                 }
                 {
-                  type = "reddit";
-                  subreddit = "selfhosted";
+                  type = "rss";
+                  limit = 10;
+                  collapse-after = 3;
+                  cache = "3h";
+                  style = "detailed-list";
+                  feeds = [
+                    {url = "https://selfh.st/rss";}
+                    {url = "https://dotfyle.com/this-week-in-neovim/rss.xml";}
+                    {url = "https://www.tabnews.com.br/recentes/rss";}
+                  ];
                 }
               ];
             }
@@ -106,10 +104,6 @@
                           url = "https://actual.dezano.io";
                         }
                         {
-                          title = "Code Server";
-                          url = "https://coder.dezano.io";
-                        }
-                        {
                           title = "Keycloak";
                           url = "https://auth.dezano.io";
                         }
@@ -133,7 +127,6 @@
                   type = "releases";
                   repositories = [
                     "actualbudget/actual"
-                    "coder/code-server"
                     "glanceapp/glance"
                     "neovim/neovim"
                     "NixOS/nixpkgs"
