@@ -15,11 +15,12 @@
     ./waybar.nix
   ];
   home.packages = with pkgs; [
+    catppuccin-cursors.mochaDark
     neovide
     wl-clipboard
     xdg-utils
-    catppuccin-cursors.mochaDark
   ];
+  programs.zathura.enable = true;
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
