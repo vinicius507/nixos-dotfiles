@@ -10,14 +10,14 @@ return {
 		end)
 	end,
 	lazygit = function(args)
-		args = args or {}
-		local cmd = {
-			"fish",
-			"-ic",
-			string.format("'lazygit %s; exit'", table.concat(args, " ")),
-		}
+		local cmd = string.format("fish -ic 'lazygit %s'; exit", vim.fn.join(args or {}))
 		local Terminal = require("toggleterm.terminal").Terminal
+		local lazygit = Terminal:new({
+			cmd = cmd,
+			direction = "float",
+			hidden = true,
+		})
 
-		Terminal:new({ cmd = vim.fn.join(cmd), direction = "float", hidden = true }):toggle()
+		lazygit:toggle()
 	end,
 }
