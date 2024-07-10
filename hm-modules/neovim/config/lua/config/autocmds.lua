@@ -17,5 +17,5 @@ vim.api.nvim_create_autocmd("FileType", {
 		"gitconfig",
 	},
 	group = augroup("git_editor"),
-	command = "set bufhidden=false",
+	command = "set bufhidden=delete",
 })
