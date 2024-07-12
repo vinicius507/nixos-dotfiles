@@ -13,6 +13,7 @@ return {
 			{ path = "lazydev.nvim", words = { "lazydev%.Config" } },
 			{ path = "luvit-meta/library", words = { "vim%.uv" } },
 			{ path = "trouble.nvim", words = { "trouble%.Config" } },
+			{ path = "which-key.nvim", words = { "wk%.Config" } },
 		},
 	},
 }

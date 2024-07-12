@@ -1,11 +1,11 @@
 local term = require("lib.terminal")
 
+---@type LazySpec
 return {
 	"akinsho/toggleterm.nvim",
 	version = "*",
 	dependencies = {
 		{ "nvim-lualine/lualine.nvim", opts = { extensions = { "toggleterm" } } },
-		{ "folke/which-key.nvim", opts = { spec = { ["<Leader>t"] = "+terminal" } } },
 	},
 	cmd = { "ToggleTerm", "ToggleTermToggleAll", "TermExec", "TermSelect" },
 	keys = {
