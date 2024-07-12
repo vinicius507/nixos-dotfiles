@@ -2,7 +2,10 @@
   services.glance = {
     enable = true;
     settings = {
-      server.port = 8080;
+      server = {
+        host = "100.85.134.13";
+        port = 8080;
+      };
       theme = {
         background-color = "240 21 15";
         contrast-multiplier = 1.2;
