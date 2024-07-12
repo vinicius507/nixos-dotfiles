@@ -5,7 +5,7 @@ return {
 	version = "*",
 	dependencies = {
 		{ "nvim-lualine/lualine.nvim", opts = { extensions = { "toggleterm" } } },
-		{ "folke/which-key.nvim", opts = { defaults = { ["<Leader>t"] = "+terminal" } } },
+		{ "folke/which-key.nvim", opts = { spec = { ["<Leader>t"] = "+terminal" } } },
 	},
 	cmd = { "ToggleTerm", "ToggleTermToggleAll", "TermExec", "TermSelect" },
 	keys = {
