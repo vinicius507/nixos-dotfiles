@@ -9,7 +9,7 @@
       alejandra
       gcc
       lua-language-server
-      markdownlint-cli
+      markdownlint-cli2
       marksman
       nil
       norminette

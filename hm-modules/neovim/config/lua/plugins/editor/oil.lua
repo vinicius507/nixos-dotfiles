@@ -17,8 +17,6 @@ return {
 		keymaps = {
 			q = "actions.close",
 			["<C-l>"] = false,
-			["<C-s>"] = "actions.select_split",
-			["<C-v>"] = "actions.select_vsplit",
 		},
 	},
 }

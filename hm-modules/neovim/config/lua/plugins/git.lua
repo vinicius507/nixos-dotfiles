@@ -9,12 +9,7 @@ end
 return {
 	{
 		"moyiz/git-dev.nvim",
-		cmd = {
-			"GitDevOpen",
-			"GitDevToggleUI",
-			"GitDevRecents",
-			"GitDevCleanAll",
-		},
+		cmd = { "GitDevOpen", "GitDevToggleUI", "GitDevRecents", "GitDevCleanAll" },
 		keys = {
 			{ "<leader>go", gitdev_open, desc = "Open a remote git repository" },
 		},
