@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       server = {
-        host = "100.85.134.13";
+        host = "0.0.0.0";
         port = 8080;
       };
       theme = {
