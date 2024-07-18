@@ -7,22 +7,26 @@
     enable = true;
     extraPackages = with pkgs; [
       alejandra
+      black
       gcc
       lua-language-server
       markdownlint-cli2
       marksman
       nil
+      nodePackages.prettier
+      nodePackages.typescript-language-server
       norminette
       prettierd
+      pyright
+      ruff
       shfmt
       sqlfluff
       stylua
       tailwindcss-language-server
+      taplo
       unzip
       vscode-langservers-extracted
       yaml-language-server
-      nodePackages.prettier
-      nodePackages.typescript-language-server
     ];
     vimAlias = true;
     withNodeJs = true;

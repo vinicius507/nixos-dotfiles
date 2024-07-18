@@ -20,5 +20,7 @@ opt.listchars = {
 }
 opt.shortmess:append({ s = true })
 
+vim.g.lazyvim_python_ruff = "ruff"
+
 -- Neovide Options
 vim.g.neovide_transparency = 0.8
