@@ -29,7 +29,6 @@
       outputs.homeManagerModules.firefox
       outputs.homeManagerModules.neovim
       outputs.homeManagerModules.vscode
-      outputs.homeManagerModules.zed
     ];
     useGlobalPkgs = true;
     useUserPackages = true;
