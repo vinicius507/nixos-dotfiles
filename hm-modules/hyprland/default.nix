@@ -54,8 +54,6 @@ in {
         "${lib.getExe pkgs.waybar}"
       ];
       decoration = {
-        active_opacity = 1;
-        inactive_opacity = 0.8;
         blur = {
           enabled = true;
           size = 6;
@@ -90,7 +88,6 @@ in {
         ];
       };
       dwindle = {
-        # no_gaps_when_only = 1;
         pseudotile = true;
         preserve_split = true;
       };
