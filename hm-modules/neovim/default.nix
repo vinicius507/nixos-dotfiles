@@ -8,6 +8,7 @@
     extraPackages = with pkgs; [
       alejandra
       black
+      dockerfile-language-server-nodejs
       gcc
       lua-language-server
       markdownlint-cli2
