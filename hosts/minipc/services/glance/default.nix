@@ -7,9 +7,9 @@
         port = 8080;
       };
       theme = {
-        background-color = "240 21 15";
+        background-color = "240 2 9";
         contrast-multiplier = 1.2;
-        primary-color = "217 92 83";
+        primary-color = "232 97 85";
         positive-color = "115 54 76";
         negative-color = "347 70 65";
       };
