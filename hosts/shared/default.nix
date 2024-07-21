@@ -149,7 +149,7 @@
     opacity = {
       desktop = 0.6;
       popups = 0.8;
-      terminal = 0.8;
+      terminal = 1.0;
     };
     cursor = {
       name = "catppuccin-mocha-dark-cursors";
