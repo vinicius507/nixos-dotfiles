@@ -22,7 +22,7 @@ in {
       };
       background = [
         {
-          path = config.stylix.image;
+          path = builtins.toString config.stylix.image;
           blur_passes = 3;
           blur_size = 8;
         }

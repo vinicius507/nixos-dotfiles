@@ -145,10 +145,7 @@
       base0E = "cba6f7";
       base0F = "f2cdcd";
     };
-    image = builtins.fetchurl {
-      url = "https://i.imgur.com/OrCZMPm.jpeg";
-      sha256 = "sha256:1dd8s9hdfs0zff2aq2nzvi2c3rh60m8g2618x3sybz81xz7kk36x";
-    };
+    image = ../../assets/oni.png;
     opacity = {
       desktop = 0.6;
       popups = 0.8;
