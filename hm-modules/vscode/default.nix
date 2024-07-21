@@ -27,6 +27,16 @@
       ];
     userSettings = {
       "breadcrumbs.enabled" = false;
+      "catppuccin.colorOverrides" = {
+        mocha = {
+          base = "#161617";
+          mantle = "#131314";
+          crust = "#0f0f0f";
+          surface0 = "#27272a";
+          surface1 = "#353539";
+          surface2 = "#3e3e43";
+        };
+      };
       "catppuccin.workbenchMode" = "flat";
       "dev.containers.defaultExtensions" = [
         "GitHub.copilot"
