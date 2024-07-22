@@ -15,6 +15,7 @@ return {
 				surface0 = "#27272a",
 				surface1 = "#353539",
 				surface2 = "#3e3e43",
+				text = "#ffffff",
 			},
 		},
 	},

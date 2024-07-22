@@ -129,10 +129,10 @@
     base16Scheme = {
       base00 = "161617";
       base01 = "131314";
-      base02 = "1b1b1d";
-      base03 = "27272a";
-      base04 = "353539";
-      base05 = "cdd6f4";
+      base02 = "27272a";
+      base03 = "353539";
+      base04 = "3e3e43";
+      base05 = "ffffff";
       base06 = "f5e0dc";
       base07 = "b4befe";
       base08 = "f38ba8";
