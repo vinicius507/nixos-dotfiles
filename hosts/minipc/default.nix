@@ -27,10 +27,10 @@
   entertainment.steam.enable = true;
 
   environment.systemPackages = with pkgs; [
-    discord
     google-chrome
     pcmanfm
     virtiofsd
+    webcord
     wireshark
   ];
 
