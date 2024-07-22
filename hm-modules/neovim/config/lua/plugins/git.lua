@@ -8,6 +8,11 @@ end
 
 return {
 	{
+		"tpope/vim-fugitive",
+		cmd = { "Git" },
+		ft = { "gitcommit", "gitrebase", "gitconfig" },
+	},
+	{
 		"moyiz/git-dev.nvim",
 		cmd = { "GitDevOpen", "GitDevToggleUI", "GitDevRecents", "GitDevCleanAll" },
 		keys = {
