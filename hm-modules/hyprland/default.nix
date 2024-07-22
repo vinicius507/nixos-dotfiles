@@ -23,6 +23,7 @@ in {
     ./waybar.nix
   ];
   home.packages = with pkgs; [
+    bitwarden-desktop
     catppuccin-cursors.mochaDark
     neovide
     wl-clipboard
