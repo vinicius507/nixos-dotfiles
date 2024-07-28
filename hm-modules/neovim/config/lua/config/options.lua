@@ -23,4 +23,5 @@ opt.shortmess:append({ s = true })
 vim.g.lazyvim_python_ruff = "ruff"
 
 -- Neovide Options
-vim.g.neovide_transparency = 0.8
+vim.g.neovide_transparency = 1
+vim.g.neovide_background_color = "#161617"

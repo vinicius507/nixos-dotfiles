@@ -6,7 +6,6 @@ return {
 	opts = {
 		flavour = "mocha",
 		term_colors = vim.g.neovide,
-		transparent_background = not vim.g.neovide,
 		color_overrides = {
 			mocha = {
 				base = "#161617",
