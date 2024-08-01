@@ -21,9 +21,24 @@ in {
           "clock"
         ];
         "hyprland/workspaces" = {
-          format = "{id}";
-          tooltip-format = "{:%d/%m/%Y}";
-          persistent_workspaces = {
+          format = "{icon} {windows}";
+          format-window-separator = " ";
+          window-rewrite-default = "󰣆";
+          window-rewrite = {
+            "class<firefox> title<*.github.*>" = "";
+            "class<firefox>" = "";
+            "class<foot> title<nvim.*>" = "";
+            "class<neovide>" = "";
+            "class<pcsx2-qt>" = "";
+            "class<wireshark>" = "󱢺";
+            "code" = "󰨞";
+            "discord" = "";
+            "foot" = "";
+            "steam" = "";
+            "title<.*youtube.*>" = "";
+          };
+          tooltip = true;
+          persistent-workspaces = {
             "*" = 4;
           };
         };
