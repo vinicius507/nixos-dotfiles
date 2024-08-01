@@ -16,6 +16,7 @@ in {
         accent = mkLiteral "#${colors.base0D}";
         background = mkLiteral "#${colors.base00}";
         background-alt = mkLiteral "#${colors.base02}";
+        border-color = mkLiteral "#${colors.base02}";
         foreground = mkLiteral "#${colors.base05}";
         selected = mkLiteral "#${colors.base02}";
         active = mkLiteral "#${colors.base02}";
@@ -28,7 +29,7 @@ in {
         fullscreen = false;
         width = mkLiteral "25%";
         border = mkLiteral "2px";
-        border-color = mkLiteral "@accent";
+        border-color = mkLiteral "@border-color";
         border-radius = mkLiteral "3px";
         background-color = mkLiteral "@background";
       };
