@@ -36,6 +36,7 @@ in {
             "foot" = "";
             "steam" = "";
             "title<.*youtube.*>" = "";
+            "webcord" = "";
           };
           tooltip = true;
           persistent-workspaces = {
