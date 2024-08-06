@@ -17,11 +17,13 @@ return {
 		lang = "python3",
 		injector = {
 			python3 = {
-				before = true,
-				after = [[
-					if __name__ == "__main__":
-						pass
-				]],
+				before = {
+					"from typing import *",
+				},
+				after = {
+					'if __name__ == "__main__":',
+					"  pass",
+				},
 			},
 		},
 	},
