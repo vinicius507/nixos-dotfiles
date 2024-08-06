@@ -18,7 +18,7 @@ return {
 		injector = {
 			python3 = {
 				before = {
-					"# noqa: F401",
+					"# ruff: noqa: F403, F405",
 					"# pyright: reportWildcardImportFromLibrary=false",
 					"from typing import *",
 					"from collections import *",
