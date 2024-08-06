@@ -37,6 +37,7 @@
     spotify
     step-cli
     virtiofsd
+    webcord
     wireshark
     zoom-us
   ];
