@@ -18,11 +18,14 @@ return {
 		injector = {
 			python3 = {
 				before = {
+					"# noqa: F401",
+					"# pyright: reportWildcardImportFromLibrary=false",
 					"from typing import *",
+					"from collections import *",
 				},
 				after = {
 					'if __name__ == "__main__":',
-					"  pass",
+					"    pass",
 				},
 			},
 		},
