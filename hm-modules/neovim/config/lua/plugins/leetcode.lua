@@ -1,4 +1,4 @@
-local arg = "leetcode"
+local arg = "leet"
 
 return {
 	"kawre/leetcode.nvim",
@@ -9,13 +9,20 @@ return {
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope.nvim",
 		"nvim-tree/nvim-web-devicons",
-		{
-			"nvim-treesitter/nvim-treesitter",
-			opts = { ensure_installed = { "html" } },
-		},
+		"nvim-treesitter/nvim-treesitter",
 	},
+	---@type lc.UserConfig
 	opts = {
 		arg = arg,
 		lang = "python3",
+		injector = {
+			python3 = {
+				before = true,
+				after = [[
+					if __name__ == "__main__":
+						pass
+				]],
+			},
+		},
 	},
 }
