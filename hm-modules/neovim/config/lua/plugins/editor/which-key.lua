@@ -6,9 +6,11 @@ return {
 		preset = "modern",
 		spec = {
 			mode = { "n" },
+			{ "<Leader>o", group = "obsidian", icon = { icon = "󰠮", color = "red" } },
 			{ "<Leader>t", group = "terminal" },
 		},
 		icons = {
+			---@type wk.IconRule[]
 			rules = {
 				{ pattern = "block", icon = "", color = "blue" },
 				{ pattern = "function", icon = "󰊕", color = "blue" },
@@ -22,6 +24,7 @@ return {
 				{ plugin = "neogen", icon = "󰈔", color = "cyan" },
 				{ plugin = "nvim-dap", icon = "󰃤 ", color = "red" },
 				{ plugin = "nvim-dap-ui", icon = "󰃤 ", color = "red" },
+				{ plugin = "obsidian.nvim", icon = "󰠮", color = "green" },
 			},
 		},
 	},

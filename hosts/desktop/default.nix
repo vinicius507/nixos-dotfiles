@@ -31,6 +31,7 @@
     anytype
     discord
     google-chrome
+    obsidian
     pcmanfm
     pcsx2
     sops
