@@ -202,7 +202,7 @@
     ];
   };
   home.file.".vscode/argv.json".text = builtins.toJSON {
-    password-store = "gnome";
+    password-store = "gnome-libsecret";
   };
   stylix.targets.vscode.enable = false;
 }
