@@ -29,6 +29,7 @@
   environment.systemPackages = with pkgs; [
     google-chrome
     pcmanfm
+    obsidian
     virtiofsd
     webcord
     wireshark
