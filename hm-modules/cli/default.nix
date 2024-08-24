@@ -11,7 +11,6 @@
   ];
   home.packages = with pkgs; [
     fd
-    fh
     lazydocker
     memos-cli
     ripgrep
