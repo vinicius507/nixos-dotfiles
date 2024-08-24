@@ -107,14 +107,6 @@
                           url = "https://actual.dezano.io";
                         }
                         {
-                          title = "Keycloak";
-                          url = "https://auth.dezano.io";
-                        }
-                        {
-                          title = "Memos";
-                          url = "https://memos.dezano.io";
-                        }
-                        {
                           title = "Status";
                           url = "https://status.dezano.io";
                         }
@@ -133,7 +125,6 @@
                     "glanceapp/glance"
                     "neovim/neovim"
                     "NixOS/nixpkgs"
-                    "usememos/memos"
                   ];
                 }
               ];
