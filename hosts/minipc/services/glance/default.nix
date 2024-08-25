@@ -122,6 +122,7 @@
                   type = "releases";
                   repositories = [
                     "actualbudget/actual"
+                    "binwiederhier/ntfy"
                     "glanceapp/glance"
                     "neovim/neovim"
                     "NixOS/nixpkgs"
