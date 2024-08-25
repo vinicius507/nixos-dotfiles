@@ -12,7 +12,6 @@
   home.packages = with pkgs; [
     fd
     lazydocker
-    memos-cli
     ripgrep
     tldr
     tree
