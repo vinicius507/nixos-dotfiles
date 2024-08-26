@@ -123,6 +123,7 @@
                   repositories = [
                     "actualbudget/actual"
                     "binwiederhier/ntfy"
+                    "dani-garcia/vaultwarden"
                     "glanceapp/glance"
                     "neovim/neovim"
                     "NixOS/nixpkgs"
