@@ -25,9 +25,11 @@ in {
           format-window-separator = " ";
           window-rewrite-default = "󰣆";
           window-rewrite = {
+            "class<bitwarden>" = "󰒘";
             "class<code>" = "󰨞";
             "class<firefox> title<*.github.*>" = "";
             "class<firefox>" = "";
+            "class<google-chrome>" = "";
             "class<foot> title<nvim.*>" = "";
             "class<neovide>" = "";
             "class<pcsx2-qt>" = "";
