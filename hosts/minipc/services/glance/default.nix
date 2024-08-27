@@ -114,6 +114,10 @@
                           title = "Traefik";
                           url = "https://traefik.dezano.io";
                         }
+                        {
+                          title = "Vaultwarden";
+                          url = "https://vault.dezano.io";
+                        }
                       ];
                     }
                   ];
