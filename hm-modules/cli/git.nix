@@ -21,8 +21,8 @@
         condition = "gitdir:~/Code/soulloop";
         path = builtins.toFile "gitconfig-soulloop.inc" ''
           [user]
-            name = Vinicius Oliveira
-            email = vinicius@soulloop.com
+            name = "Vinicius Oliveira"
+            email = "vinicius@soulloop.com"
         '';
       }
     ];
