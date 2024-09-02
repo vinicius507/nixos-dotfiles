@@ -49,6 +49,10 @@
 
   networking = {
     firewall.enable = true;
+    firewall.trustedInterfaces = [
+      "docker0"
+      config.services.tailscale.interfaceName
+    ];
     networkmanager.enable = true;
   };
 
