@@ -16,6 +16,16 @@
       ".vscode/"
       ".lazy.lua"
     ];
+    includes = [
+      {
+        condition = "gitdir:~/Code/soulloop";
+        path = builtins.toFile "gitconfig-soulloop.inc" ''
+          [user]
+            name = Vinicius Oliveira
+            email = vinicius@soulloop.com
+        '';
+      }
+    ];
     extraConfig = {
       init.defaultBranch = "main";
       github.user = "vinicius507";
