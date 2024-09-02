@@ -2,8 +2,8 @@
   virtualisation.oci-containers.containers.syncthing = {
     image = "lscr.io/linuxserver/syncthing:latest";
     environment = {
-      PUID = 1000;
-      GUID = 1000;
+      PUID = "1000";
+      GUID = "1000";
     };
     volumes = [
       "/sync:/config"
