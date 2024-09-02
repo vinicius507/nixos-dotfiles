@@ -98,6 +98,7 @@
       enable = true;
       qemu.package = pkgs.qemu_kvm;
     };
+    oci-containers.backend = "docker";
   };
 
   system.stateVersion = "23.11";
