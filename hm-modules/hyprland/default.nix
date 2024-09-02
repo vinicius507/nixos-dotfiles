@@ -94,11 +94,11 @@ in {
       };
       gestures.workspace_swipe = false;
       windowrulev2 = [
-        "float,class:^(pcmanfm)$"
-        "pin,title:^(Picture-in-Picture)$"
-        "float,title:^(Picture-in-Picture)$"
+        "float,class:^(org.gnome.Nautilus)$"
         "float,class:^(steam)$,title:^(Friends List)$"
         "float,class:^(virt-manager)$,title:^(Virtual Machine Manager)$"
+        "float,title:^(Picture-in-Picture)$"
+        "pin,title:^(Picture-in-Picture)$"
       ];
       "$mod" = "SUPER";
       bind = [
@@ -113,7 +113,7 @@ in {
         "$mod, M, fullscreen, 1"
         "$mod, V, togglefloating,"
         "$mod, V, centerwindow,"
-        "$mod, E, exec, pcmanfm"
+        "$mod, E, exec, nautilus"
         "$mod, P, pin,"
         "$mod, O, togglesplit, # dwindle"
         "$mod SHIFT, P, pseudo, # dwindle"

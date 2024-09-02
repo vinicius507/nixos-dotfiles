@@ -28,19 +28,17 @@
   networking.hostName = "desktop";
 
   environment.systemPackages = with pkgs; [
-    anytype
     discord
     google-chrome
     obsidian
-    pcmanfm
     pcsx2
+    nautilus
     sops
     spotify
     step-cli
     virtiofsd
     webcord
     wireshark
-    zoom-us
   ];
 
   home-manager.sharedModules = [

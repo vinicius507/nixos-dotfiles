@@ -27,7 +27,7 @@
 
   environment.systemPackages = with pkgs; [
     google-chrome
-    pcmanfm
+    nautilus
     obsidian
     virtiofsd
     webcord
