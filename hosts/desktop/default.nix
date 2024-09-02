@@ -36,6 +36,7 @@
     obsidian
     pcsx2
     nautilus
+    slack
     sops
     spotify
     step-cli
