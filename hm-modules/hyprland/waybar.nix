@@ -33,6 +33,7 @@ in {
             "class<foot> title<nvim.*>" = "";
             "class<neovide>" = "";
             "class<pcsx2-qt>" = "";
+            "class<slack>" = "";
             "class<wireshark>" = "󱢺";
             "discord" = "";
             "foot" = "";
