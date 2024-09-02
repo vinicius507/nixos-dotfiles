@@ -18,7 +18,7 @@
     ];
     includes = [
       {
-        condition = "gitdir:~/Code/soulloop";
+        condition = "gitdir:~/Code/soulloop/**";
         path = builtins.toFile "gitconfig-soulloop.inc" ''
           [user]
             name = "Vinicius Oliveira"
