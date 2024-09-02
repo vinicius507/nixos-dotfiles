@@ -7,8 +7,8 @@ return {
 		"ObsidianSearch",
 	},
 	event = {
-		"BufReadPre ~/Documents/vaults/personal/*.md",
-		"BufNewFile ~/Documents/vaults/personal/*.md",
+		"BufReadPre ~/Documents/vaults/**/*.md",
+		"BufNewFile ~/Documents/vaults/**/*.md",
 	},
 	keys = {
 		{ "<leader>fo", "<cmd>ObsidianQuickSwitch<CR>", desc = "Find Obsidian Note" },

@@ -6,8 +6,11 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+
     inputs.nixos-hardware.nixosModules.common-cpu-amd
     inputs.nixos-hardware.nixosModules.common-gpu-amd
+
+    ./services/syncthing.nix
   ];
 
   boot.loader = {
@@ -54,6 +57,9 @@
         key = "AD3ED787366ACED9";
       };
       services.mpris-proxy.enable = true;
+      systemd.user.tmpfiles.rules = [
+        "L %h/Documents/vaults - - - - /sync/Obsidian"
+      ];
     }
   ];
 
