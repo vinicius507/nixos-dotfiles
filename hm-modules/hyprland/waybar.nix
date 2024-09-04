@@ -32,6 +32,7 @@ in {
             "class<google-chrome>" = "";
             "class<foot> title<nvim.*>" = "";
             "class<neovide>" = "";
+            "class<obsidian>" = "󰠮";
             "class<pcsx2-qt>" = "";
             "class<slack>" = "";
             "class<wireshark>" = "󱢺";
