@@ -48,6 +48,7 @@ return {
 		ui = { enable = false },
 		templates = { folder = "templates" },
 		note_id_func = zettelkasten_id,
+		notes_subdir = "notes",
 		workspaces = {
 			{
 				name = "personal",
