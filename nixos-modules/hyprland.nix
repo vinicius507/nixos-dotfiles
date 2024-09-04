@@ -15,6 +15,8 @@ in {
       outputs.homeManagerModules.hyprland
     ];
 
+    environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
     programs.hyprland = {
       enable = true;
       xwayland.enable = true;
