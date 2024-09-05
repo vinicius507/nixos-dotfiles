@@ -31,7 +31,7 @@
   networking.hostName = "desktop";
 
   environment.systemPackages = with pkgs; [
-    dbeaver-bin
+    beekeeper-studio
     discord
     google-chrome
     obsidian
