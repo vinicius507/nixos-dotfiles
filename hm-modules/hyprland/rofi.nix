@@ -10,6 +10,7 @@ in {
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
+    font = "${config.stylix.fonts.monospace.name} 14";
     terminal = lib.getExe pkgs.foot;
     theme = {
       "*" = {
