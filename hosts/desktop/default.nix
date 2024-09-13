@@ -32,8 +32,8 @@
 
   environment.systemPackages = with pkgs; [
     beekeeper-studio
-    discord
     google-chrome
+    obs-studio
     obsidian
     pcsx2
     nautilus
