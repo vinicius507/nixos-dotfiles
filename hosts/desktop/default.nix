@@ -42,6 +42,7 @@
     spotify
     step-cli
     virtiofsd
+    warp-terminal
     webcord
     wireshark
   ];
