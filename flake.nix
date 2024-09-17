@@ -55,6 +55,7 @@
       };
     };
     homeManagerModules = import ./hm-modules;
+    homeConfigurations = import ./home;
     devShells.${system}.default = pkgs.mkShell {
       packages = with pkgs; [
         nix

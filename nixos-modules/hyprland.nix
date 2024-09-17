@@ -1,5 +1,4 @@
 {
-  outputs,
   config,
   lib,
   ...
@@ -11,10 +10,6 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    home-manager.sharedModules = [
-      outputs.homeManagerModules.hyprland
-    ];
-
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
     programs.hyprland = {

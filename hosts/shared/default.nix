@@ -22,78 +22,15 @@
   console.keyMap = "br-abnt2";
 
   home-manager = {
-    sharedModules = [
-      inputs.sops-nix.homeManagerModules.sops
-      outputs.homeManagerModules.cli
-      outputs.homeManagerModules.firefox
-      outputs.homeManagerModules.neovim
-      outputs.homeManagerModules.vscode
-      {
-        home.packages = with pkgs; [
-          lazydocker
-          tldr
-        ];
-        systemd.user.tmpfiles.rules = [
-          "d %t/downloads 0700 - - - -"
-          "L %h/Downloads - - - - %t/downloads"
-        ];
-      }
-    ];
+    sharedModules =
+      [
+        inputs.sops-nix.homeManagerModules.sops
+        outputs.homeConfigurations.shared
+      ]
+      ++ builtins.attrValues outputs.homeManagerModules;
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.vini = {
-      home = {
-        username = "vini";
-        homeDirectory = "/home/vini";
-        sessionVariables = {
-          BROWSER = "firefox";
-          EDITOR = "nvim";
-        };
-        stateVersion = "23.11";
-      };
-      programs = {
-        git = {
-          enable = true;
-          lfs.enable = true;
-          userName = "Vinicius Oliveira";
-          userEmail = "viniciusp.olivera@gmail.com";
-          ignores = [
-            ".cache/"
-            ".direnv/"
-            ".devenv/"
-            ".envrc"
-            ".vscode/"
-            ".lazy.lua"
-          ];
-          includes = [
-            {
-              condition = "gitdir:~/Code/soulloop/**";
-              path = builtins.toFile "gitconfig-soulloop.inc" ''
-                [user]
-                  name = "Vinicius Oliveira"
-                  email = "vinicius@soulloop.com"
-              '';
-            }
-          ];
-          extraConfig = {
-            init.defaultBranch = "main";
-            github.user = "vinicius507";
-          };
-        };
-        gh = {
-          enable = true;
-          settings.git_protocol = "ssh";
-        };
-        gpg.enable = true;
-      };
-      services = {
-        gpg-agent = {
-          enable = true;
-          pinentryPackage = pkgs.pinentry-gnome3;
-        };
-      };
-      sops.defaultSopsFile = ../../secrets/default.yaml;
-    };
+    users.vini = import ../../home/vini;
     extraSpecialArgs = {
       inherit inputs outputs;
     };
