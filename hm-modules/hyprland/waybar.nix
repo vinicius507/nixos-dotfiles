@@ -27,6 +27,7 @@ in {
           window-rewrite = {
             "class<bitwarden>" = "󰒘";
             "class<code>" = "󰨞";
+            "class<code-url-handler>" = "󰨞";
             "class<firefox> title<*.github.*>" = "";
             "class<firefox>" = "";
             "class<google-chrome>" = "";
