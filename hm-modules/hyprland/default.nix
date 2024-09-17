@@ -3,16 +3,7 @@
   lib,
   pkgs,
   ...
-}: let
-  wallpaper = pkgs.fetchurl {
-    url = "https://moewalls.com/download.php?video=/2023/japanese-oni-demon-mask-monochrome.mp4";
-    curlOptsList = [
-      "--header"
-      "Referer: https://moewalls.com/fantasy/japanese-oni-demon-mask-monochrome-live-wallpaper"
-    ];
-    sha256 = "sha256-SDIzWOKfap+VeLGoSkHy69rRs8I2l+S2tGbsFQXO7Ds=";
-  };
-in {
+}: {
   imports = [
     ./foot.nix
     ./gtk.nix
@@ -51,7 +42,7 @@ in {
       ];
       exec-once = [
         "${pkgs.mako}/bin/mako"
-        "${lib.getExe pkgs.mpvpaper} -o 'no-audio --loop-file=inf' '*' ${wallpaper}"
+        "${lib.getExe pkgs.mpvpaper} -o 'no-audio --loop-file=inf' '*' ${../../assets/oni.mp4}"
         "${lib.getExe pkgs.waybar}"
       ];
       decoration = {
