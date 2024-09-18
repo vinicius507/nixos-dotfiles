@@ -36,9 +36,6 @@
   in {
     packages.${system} = import ./pkgs {inherit outputs pkgs;};
     overlays = {
-      base = final: prev: {
-        zellij-edit = self.packages.${final.system}.zellij-edit;
-      };
       neovim-config = final: prev: {
         neovim-config = self.packages.${final.system}.neovim-config;
       };

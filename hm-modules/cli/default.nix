@@ -62,6 +62,7 @@ in {
         '';
       };
 
+      fzf.enable = true;
       lazygit.enable = true;
       nix-index.enable = true;
       ripgrep.enable = true;
