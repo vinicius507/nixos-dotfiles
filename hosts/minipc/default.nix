@@ -21,8 +21,6 @@
     };
   };
 
-  desktop.hyprland.enable = true;
-
   environment.systemPackages = with pkgs; [
     google-chrome
     nautilus

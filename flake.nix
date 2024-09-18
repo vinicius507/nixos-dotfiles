@@ -43,7 +43,6 @@
         wl-screenshot = self.packages.${final.system}.wl-screenshot;
       };
     };
-    nixosModules = import ./nixos-modules;
     nixosConfigurations = {
       desktop = mkHost {
         modules = [

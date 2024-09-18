@@ -10,6 +10,7 @@
     inputs.nixos-hardware.nixosModules.common-cpu-amd
     inputs.nixos-hardware.nixosModules.common-gpu-amd
 
+    ./hyprland.nix
     ./services/syncthing.nix
     ./steam.nix
   ];
@@ -24,8 +25,6 @@
       device = "nodev";
     };
   };
-
-  desktop.hyprland.enable = true;
 
   networking.hostName = "desktop";
 
