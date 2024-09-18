@@ -36,7 +36,6 @@
         zellij-edit = self.packages.${final.system}.zellij-edit;
       };
       hyprland = final: prev: {
-        firefox-vertical-tabs = self.packages.${final.system}.firefox-vertical-tabs;
         rofi-run = self.packages.${final.system}.rofi-run;
         wl-screenshot = self.packages.${final.system}.wl-screenshot;
       };
