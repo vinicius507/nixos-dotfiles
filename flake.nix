@@ -35,14 +35,8 @@
       };
   in {
     packages.${system} = import ./pkgs {inherit outputs pkgs;};
-    overlays = {
-      neovim-config = final: prev: {
-        neovim-config = self.packages.${final.system}.neovim-config;
-      };
-      hyprland = final: prev: {
-        rofi-run = self.packages.${final.system}.rofi-run;
-        wl-screenshot = self.packages.${final.system}.wl-screenshot;
-      };
+    overlays = import ./overlays {
+      inherit outputs;
     };
     nixosConfigurations = {
       desktop = mkHost {
