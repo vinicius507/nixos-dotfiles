@@ -71,7 +71,10 @@
     };
   };
 
-  programs.virt-manager.enable = true;
+  programs = {
+    seahorse.enable = true;
+    virt-manager.enable = true;
+  };
 
   services.pipewire = {
     enable = true;
