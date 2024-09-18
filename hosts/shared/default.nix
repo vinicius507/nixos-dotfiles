@@ -20,12 +20,10 @@
   console.keyMap = "br-abnt2";
 
   home-manager = {
-    sharedModules =
-      [
-        inputs.sops-nix.homeManagerModules.sops
-        outputs.homeConfigurations.shared
-      ]
-      ++ builtins.attrValues outputs.homeManagerModules;
+    sharedModules = [
+      inputs.sops-nix.homeManagerModules.sops
+      outputs.homeConfigurations.shared
+    ];
     useGlobalPkgs = true;
     useUserPackages = true;
     users.vini = import ../../home/vini;

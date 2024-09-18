@@ -1,5 +1,6 @@
 {
   config,
+  inputs,
   lib,
   pkgs,
   ...
@@ -7,6 +8,8 @@
   cfg = config.dotfiles.cli;
 in {
   imports = [
+    inputs.nix-index-database.hmModules.nix-index
+
     ./starship.nix
     ./zellij.nix
   ];
@@ -60,6 +63,7 @@ in {
       };
 
       lazygit.enable = true;
+      nix-index.enable = true;
       ripgrep.enable = true;
       starship.enable = true;
       zellij.enable = true;

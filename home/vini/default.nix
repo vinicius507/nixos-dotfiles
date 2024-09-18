@@ -1,10 +1,16 @@
-{pkgs, ...}: {
-  imports = [
-    ./firefox.nix
-    ./git.nix
-    ./neovim.nix
-    ./vscode.nix
-  ];
+{
+  outputs,
+  pkgs,
+  ...
+}: {
+  imports =
+    [
+      ./firefox.nix
+      ./git.nix
+      ./neovim.nix
+      ./vscode.nix
+    ]
+    ++ builtins.attrValues outputs.homeManagerModules;
   home = {
     username = "vini";
     homeDirectory = "/home/vini";
