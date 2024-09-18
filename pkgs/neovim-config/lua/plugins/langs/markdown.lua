@@ -17,12 +17,13 @@ return {
 		"markdown.nvim",
 		opts = {
 			code = {
-				width = "full",
+				min_width = 40,
 			},
 			heading = {
 				sign = true,
 				width = "block",
 				icons = { "󰉫", "󰉬", "󰉭", "󰉮", "󰉯", "󰉰" },
+				right_pad = 1,
 				position = "inline",
 			},
 		},
