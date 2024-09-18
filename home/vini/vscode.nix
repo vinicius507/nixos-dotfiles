@@ -6,6 +6,9 @@
 }: let
   colors = config.lib.stylix.colors.withHashtag;
 in {
+  home.file.".vscode/argv.json".text = builtins.toJSON {
+    password-store = "gnome";
+  };
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions;
