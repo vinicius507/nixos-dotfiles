@@ -23,8 +23,6 @@
 
   desktop.hyprland.enable = true;
 
-  entertainment.steam.enable = true;
-
   environment.systemPackages = with pkgs; [
     google-chrome
     nautilus

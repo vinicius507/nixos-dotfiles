@@ -11,6 +11,7 @@
     inputs.nixos-hardware.nixosModules.common-gpu-amd
 
     ./services/syncthing.nix
+    ./steam.nix
   ];
 
   boot.loader = {
@@ -25,8 +26,6 @@
   };
 
   desktop.hyprland.enable = true;
-
-  entertainment.steam.enable = true;
 
   networking.hostName = "desktop";
 
