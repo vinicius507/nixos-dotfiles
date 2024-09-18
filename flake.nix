@@ -35,6 +35,9 @@
       base = final: prev: {
         zellij-edit = self.packages.${final.system}.zellij-edit;
       };
+      neovim-config = final: prev: {
+        neovim-config = self.packages.${final.system}.neovim-config;
+      };
       hyprland = final: prev: {
         rofi-run = self.packages.${final.system}.rofi-run;
         wl-screenshot = self.packages.${final.system}.wl-screenshot;

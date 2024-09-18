@@ -2,6 +2,7 @@
   imports = [
     ./firefox.nix
     ./git.nix
+    ./neovim.nix
     ./vscode.nix
   ];
   home = {
