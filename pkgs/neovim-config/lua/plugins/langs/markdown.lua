@@ -14,7 +14,7 @@ return {
 		},
 	},
 	{
-		"markdown.nvim",
+		"render-markdown.nvim",
 		opts = {
 			code = {
 				min_width = 40,
