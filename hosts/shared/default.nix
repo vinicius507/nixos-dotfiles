@@ -69,19 +69,6 @@
   programs.fish.enable = true;
 
   services = {
-    davfs2 = {
-      enable = true;
-      settings = {
-        globalSection = {
-          use_locks = false;
-        };
-        sections = {
-          "${config.users.users.vini.home}/Shared" = {
-            gui_optimize = true;
-          };
-        };
-      };
-    };
     gnome.gnome-keyring.enable = true;
     greetd = {
       enable = true;
