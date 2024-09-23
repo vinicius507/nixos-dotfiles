@@ -45,24 +45,28 @@
     wireshark
   ];
 
-  home-manager.sharedModules = [
-    {
-      dconf.settings = {
-        "org/virt-manager/virt-manager/connections" = {
-          autoconnect = ["qemu:///system"];
-          uris = ["qemu:///system"];
+  home-manager = {
+    sharedModules = [
+      {
+        dconf.settings = {
+          "org/virt-manager/virt-manager/connections" = {
+            autoconnect = ["qemu:///system"];
+            uris = ["qemu:///system"];
+          };
         };
-      };
+        services.mpris-proxy.enable = true;
+        systemd.user.tmpfiles.rules = [
+          "L %h/Documents/vaults - - - - /sync/Obsidian"
+        ];
+      }
+    ];
+    users.vini = {
       programs.git.signing = {
         signByDefault = true;
         key = "AD3ED787366ACED9";
       };
-      services.mpris-proxy.enable = true;
-      systemd.user.tmpfiles.rules = [
-        "L %h/Documents/vaults - - - - /sync/Obsidian"
-      ];
-    }
-  ];
+    };
+  };
 
   hardware.bluetooth = {
     enable = true;

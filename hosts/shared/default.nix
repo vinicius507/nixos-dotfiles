@@ -36,11 +36,13 @@
   i18n.extraLocaleSettings.LC_MESSAGES = "en_US.UTF-8";
 
   networking = {
-    firewall.enable = true;
-    firewall.trustedInterfaces = [
-      "docker0"
-      config.services.tailscale.interfaceName
-    ];
+    firewall = {
+      enable = true;
+      trustedInterfaces = [
+        "docker0"
+        config.services.tailscale.interfaceName
+      ];
+    };
     networkmanager.enable = true;
   };
 
