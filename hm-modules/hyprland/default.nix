@@ -22,14 +22,13 @@ in {
     ./rofi.nix
     ./waybar.nix
   ];
+
   home.packages = with pkgs; [
-    bitwarden-desktop
     catppuccin-cursors.mochaDark
-    neovide
     wl-clipboard
     xdg-utils
   ];
-  programs.zathura.enable = true;
+
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -93,8 +92,12 @@ in {
         preserve_split = true;
       };
       gestures.workspace_swipe = false;
+      layerrule = [
+        "noanim, rofi"
+      ];
       windowrulev2 = [
         "float,class:^(org.gnome.Nautilus)$"
+        "float,class:^(seahorse)$"
         "float,class:^(steam)$,title:^(Friends List)$"
         "float,class:^(virt-manager)$,title:^(Virtual Machine Manager)$"
         "float,title:^(Picture-in-Picture)$"
