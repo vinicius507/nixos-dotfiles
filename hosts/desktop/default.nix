@@ -29,19 +29,10 @@
   networking.hostName = "desktop";
 
   environment.systemPackages = with pkgs; [
-    beekeeper-studio
     google-chrome
-    obs-studio
-    obsidian
-    pcsx2
-    nautilus
-    slack
     sops
-    spotify
     step-cli
     virtiofsd
-    warp-terminal
-    webcord
     wireshark
   ];
 

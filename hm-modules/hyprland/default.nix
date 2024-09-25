@@ -97,6 +97,7 @@ in {
       ];
       windowrulev2 = [
         "float,class:^(org.gnome.Nautilus)$"
+        "float,class:^(com.saivert.pwvucontrol)$"
         "float,class:^(seahorse)$"
         "float,class:^(steam)$,title:^(Friends List)$"
         "float,class:^(virt-manager)$,title:^(Virtual Machine Manager)$"
