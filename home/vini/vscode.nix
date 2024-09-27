@@ -21,6 +21,7 @@ in {
         ms-vscode-remote.remote-containers
         ms-vsliveshare.vsliveshare
         vscodevim.vim
+        wix.vscode-import-cost
         yzhang.markdown-all-in-one
       ]
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
