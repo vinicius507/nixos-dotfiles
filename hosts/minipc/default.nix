@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+    ./services/dokploy.nix
     inputs.nixos-hardware.nixosModules.common-cpu-amd
     inputs.nixos-hardware.nixosModules.common-gpu-amd
   ];
@@ -69,7 +70,10 @@
   };
 
   virtualisation = {
-    docker.enable = true;
+    docker = {
+      enable = true;
+      liveRestore = false;
+    };
     oci-containers.backend = "docker";
     libvirtd = {
       enable = true;
