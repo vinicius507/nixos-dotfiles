@@ -7,9 +7,11 @@
   colors = config.lib.stylix.colors.withHashtag;
   vscodeEnabled = config.programs.vscode.enable;
 in {
-  home.file.".vscode/argv.json".text = lib.mkIf vscodeEnabled (builtins.toJSON {
-    password-store = "gnome";
-  });
+  home.file = lib.mkIf vscodeEnabled {
+    ".vscode/argv.json".text = builtins.toJSON {
+      password-store = "gnome";
+    };
+  };
   programs.vscode = {
     extensions = with pkgs.vscode-extensions;
       [
