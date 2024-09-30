@@ -52,9 +52,25 @@
       }
     ];
     users.vini = {
-      programs.git.signing = {
-        signByDefault = true;
-        key = "AD3ED787366ACED9";
+      home.packages = with pkgs; [
+        beekeeper-studio
+        bitwarden-desktop
+        nautilus
+        neovide
+        obs-studio
+        obsidian
+        pcsx2
+        pwvucontrol
+        slack
+        webcord
+      ];
+      programs = {
+        firefox.enable = true;
+        git.signing = {
+          signByDefault = true;
+          key = "AD3ED787366ACED9";
+        };
+        vscode.enable = true;
       };
     };
   };

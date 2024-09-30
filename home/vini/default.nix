@@ -15,18 +15,6 @@
   home = {
     username = "vini";
     homeDirectory = "/home/vini";
-    packages = with pkgs; [
-      beekeeper-studio
-      bitwarden-desktop
-      nautilus
-      neovide
-      obs-studio
-      obsidian
-      pcsx2
-      pwvucontrol
-      slack
-      webcord
-    ];
     sessionVariables = {
       BROWSER = "firefox";
       EDITOR = "nvim";

@@ -1,7 +1,6 @@
 {
   inputs,
   config,
-  pkgs,
   ...
 }: {
   imports = [
@@ -21,15 +20,6 @@
       device = "nodev";
     };
   };
-
-  environment.systemPackages = with pkgs; [
-    google-chrome
-    nautilus
-    obsidian
-    virtiofsd
-    webcord
-    wireshark
-  ];
 
   networking.hostName = "minipc";
   networking.networkmanager.wifi.powersave = false;
@@ -65,7 +55,6 @@
     users.vini.hashedPasswordFile = config.sops.secrets."users/vini/password".path;
     extraGroups = {
       docker.members = ["vini"];
-      libvirtd.members = ["vini"];
     };
   };
 
@@ -75,10 +64,6 @@
       liveRestore = false;
     };
     oci-containers.backend = "docker";
-    libvirtd = {
-      enable = true;
-      qemu.package = pkgs.qemu_kvm;
-    };
   };
 
   system.stateVersion = "23.11";
