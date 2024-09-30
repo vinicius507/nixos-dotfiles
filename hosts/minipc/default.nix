@@ -1,11 +1,11 @@
 {
   inputs,
   config,
-  pkgs,
   ...
 }: {
   imports = [
     ./hardware-configuration.nix
+    ./services/dokploy.nix
     inputs.nixos-hardware.nixosModules.common-cpu-amd
     inputs.nixos-hardware.nixosModules.common-gpu-amd
   ];
@@ -20,19 +20,6 @@
       device = "nodev";
     };
   };
-
-  desktop.hyprland.enable = true;
-
-  entertainment.steam.enable = true;
-
-  environment.systemPackages = with pkgs; [
-    google-chrome
-    nautilus
-    obsidian
-    virtiofsd
-    webcord
-    wireshark
-  ];
 
   networking.hostName = "minipc";
   networking.networkmanager.wifi.powersave = false;
@@ -68,17 +55,15 @@
     users.vini.hashedPasswordFile = config.sops.secrets."users/vini/password".path;
     extraGroups = {
       docker.members = ["vini"];
-      libvirtd.members = ["vini"];
     };
   };
 
   virtualisation = {
-    docker.enable = true;
-    oci-containers.backend = "docker";
-    libvirtd = {
+    docker = {
       enable = true;
-      qemu.package = pkgs.qemu_kvm;
+      liveRestore = false;
     };
+    oci-containers.backend = "docker";
   };
 
   system.stateVersion = "23.11";

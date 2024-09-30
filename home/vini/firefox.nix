@@ -10,7 +10,6 @@ in {
     nur.hmModules.nur
   ];
   programs.firefox = {
-    enable = true;
     package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
       extraPolicies = {
         DisableTelemetry = true;

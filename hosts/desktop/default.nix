@@ -10,7 +10,9 @@
     inputs.nixos-hardware.nixosModules.common-cpu-amd
     inputs.nixos-hardware.nixosModules.common-gpu-amd
 
+    ./hyprland.nix
     ./services/syncthing.nix
+    ./steam.nix
   ];
 
   boot.loader = {
@@ -24,47 +26,54 @@
     };
   };
 
-  desktop.hyprland.enable = true;
-
-  entertainment.steam.enable = true;
-
   networking.hostName = "desktop";
 
   environment.systemPackages = with pkgs; [
-    beekeeper-studio
     google-chrome
-    obs-studio
-    obsidian
-    pcsx2
-    nautilus
-    slack
     sops
-    spotify
     step-cli
     virtiofsd
-    warp-terminal
-    webcord
     wireshark
   ];
 
-  home-manager.sharedModules = [
-    {
-      dconf.settings = {
-        "org/virt-manager/virt-manager/connections" = {
-          autoconnect = ["qemu:///system"];
-          uris = ["qemu:///system"];
+  home-manager = {
+    sharedModules = [
+      {
+        dconf.settings = {
+          "org/virt-manager/virt-manager/connections" = {
+            autoconnect = ["qemu:///system"];
+            uris = ["qemu:///system"];
+          };
         };
-      };
-      programs.git.signing = {
-        signByDefault = true;
-        key = "AD3ED787366ACED9";
-      };
-      services.mpris-proxy.enable = true;
-      systemd.user.tmpfiles.rules = [
-        "L %h/Documents/vaults - - - - /sync/Obsidian"
+        services.mpris-proxy.enable = true;
+        systemd.user.tmpfiles.rules = [
+          "L %h/Documents/vaults - - - - /sync/Obsidian"
+        ];
+      }
+    ];
+    users.vini = {
+      home.packages = with pkgs; [
+        beekeeper-studio
+        bitwarden-desktop
+        nautilus
+        neovide
+        obs-studio
+        obsidian
+        pcsx2
+        pwvucontrol
+        slack
+        webcord
       ];
-    }
-  ];
+      programs = {
+        firefox.enable = true;
+        git.signing = {
+          signByDefault = true;
+          key = "AD3ED787366ACED9";
+        };
+        vscode.enable = true;
+      };
+    };
+  };
 
   hardware.bluetooth = {
     enable = true;
@@ -73,7 +82,10 @@
     };
   };
 
-  programs.virt-manager.enable = true;
+  programs = {
+    seahorse.enable = true;
+    virt-manager.enable = true;
+  };
 
   services.pipewire = {
     enable = true;

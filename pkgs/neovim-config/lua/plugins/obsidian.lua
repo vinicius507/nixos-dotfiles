@@ -24,6 +24,8 @@ return {
 		"ObsidianOpen",
 		"ObsidianQuickSwitch",
 		"ObsidianSearch",
+		"ObsidianToday",
+		"ObsidianYesterday",
 	},
 	event = {
 		"BufReadPre ~/Documents/vaults/**/*.md",
@@ -36,6 +38,8 @@ return {
 		{ "<leader>on", "<cmd>ObsidianNew<CR>", desc = "New Note" },
 		{ "<leader>op", "<cmd>ObsidianOpen<CR>", desc = "Preview" },
 		{ "<leader>or", "<cmd>ObsidianRename<CR>", desc = "Rename Note" },
+		{ "<leader>ot", "<cmd>ObsidianToday<CR>", desc = "Journal: Today" },
+		{ "<leader>oy", "<cmd>ObsidianYesterday<CR>", desc = "Journal: Yesterday" },
 		{ "<leader>so", "<cmd>ObsidianSearch<CR>", desc = "Search in Obsidian Notes" },
 	},
 	dependencies = {
@@ -46,9 +50,21 @@ return {
 	},
 	opts = {
 		ui = { enable = false },
-		templates = { folder = "templates" },
 		note_id_func = zettelkasten_id,
 		notes_subdir = "notes",
+		daily_notes = {
+			folder = "journal",
+			date_format = "%Y%m%d-daily",
+			alias_format = "Daily Journal",
+			default_tags = {
+				"journal/daily",
+			},
+			template = "daily",
+		},
+		templates = {
+			folder = "templates",
+			date_format = "%Y/%m/%d",
+		},
 		workspaces = {
 			{
 				name = "personal",

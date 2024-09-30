@@ -3,11 +3,19 @@
   pkgs,
   config,
   ...
-}: {
+}: let
+  colors = config.lib.stylix.colors.withHashtag;
+  vscodeEnabled = config.programs.vscode.enable;
+in {
+  home.file = lib.mkIf vscodeEnabled {
+    ".vscode/argv.json".text = builtins.toJSON {
+      password-store = "gnome";
+    };
+  };
   programs.vscode = {
-    enable = true;
     extensions = with pkgs.vscode-extensions;
       [
+        aaron-bond.better-comments
         catppuccin.catppuccin-vsc
         github.copilot
         jnoortheen.nix-ide
@@ -15,26 +23,27 @@
         ms-vscode-remote.remote-containers
         ms-vsliveshare.vsliveshare
         vscodevim.vim
+        wix.vscode-import-cost
         yzhang.markdown-all-in-one
       ]
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
           name = "symbols";
           publisher = "miguelsolorio";
-          version = "0.0.16";
-          sha256 = "sha256-LGCeqleDGWveJ7KPYd6+ArynEpET4xrhvI2H4NPuCtQ=";
+          version = "0.0.20";
+          sha256 = "sha256-u5kwrPysf3Fn7Yn9hJg3aIq8XuK+cRtHJlvn9uGdB8U=";
         }
       ];
     userSettings = {
       "breadcrumbs.enabled" = false;
       "catppuccin.colorOverrides" = {
         mocha = {
-          base = "#161617";
-          mantle = "#131314";
-          crust = "#0f0f0f";
-          surface0 = "#27272a";
-          surface1 = "#353539";
-          surface2 = "#3e3e43";
+          base = colors.base00;
+          mantle = colors.base01;
+          crust = colors.base00;
+          surface0 = colors.base02;
+          surface1 = colors.base03;
+          surface2 = colors.base04;
         };
       };
       "catppuccin.workbenchMode" = "flat";
@@ -86,6 +95,7 @@
       "vim.useSystemClipboard" = true;
       "vim.enableNeovim" = true;
       "vim.neovimPath" = lib.getExe config.programs.neovim.finalPackage;
+      "vim.neovimUseConfigFile" = true;
       "vim.handleKeys" = {
         "<C-q>" = false;
         "<C-p>" = false;
@@ -200,9 +210,6 @@
         command = "workbench.action.quickOpenView";
       }
     ];
-  };
-  home.file.".vscode/argv.json".text = builtins.toJSON {
-    password-store = "gnome-libsecret";
   };
   stylix.targets.vscode.enable = false;
 }

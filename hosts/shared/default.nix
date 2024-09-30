@@ -6,13 +6,11 @@
   pkgs,
   ...
 }: {
-  imports = with inputs;
-    [
-      home-manager.nixosModules.home-manager
-      sops-nix.nixosModules.sops
-      stylix.nixosModules.stylix
-    ]
-    ++ builtins.attrValues outputs.nixosModules;
+  imports = with inputs; [
+    home-manager.nixosModules.home-manager
+    sops-nix.nixosModules.sops
+    stylix.nixosModules.stylix
+  ];
 
   boot = {
     binfmt.emulatedSystems = ["aarch64-linux"];
@@ -24,21 +22,11 @@
   home-manager = {
     sharedModules = [
       inputs.sops-nix.homeManagerModules.sops
-      outputs.homeManagerModules.base
-      outputs.homeManagerModules.cli
-      outputs.homeManagerModules.firefox
-      outputs.homeManagerModules.neovim
-      outputs.homeManagerModules.vscode
+      outputs.homeConfigurations.shared
     ];
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.vini = {
-      home.sessionVariables = {
-        BROWSER = "firefox";
-        EDITOR = "nvim";
-      };
-      sops.defaultSopsFile = ../../secrets/default.yaml;
-    };
+    users.vini = import ../../home/vini;
     extraSpecialArgs = {
       inherit inputs outputs;
     };
@@ -48,11 +36,13 @@
   i18n.extraLocaleSettings.LC_MESSAGES = "en_US.UTF-8";
 
   networking = {
-    firewall.enable = true;
-    firewall.trustedInterfaces = [
-      "docker0"
-      config.services.tailscale.interfaceName
-    ];
+    firewall = {
+      enable = true;
+      trustedInterfaces = [
+        "docker0"
+        config.services.tailscale.interfaceName
+      ];
+    };
     networkmanager.enable = true;
   };
 
@@ -79,19 +69,6 @@
   programs.fish.enable = true;
 
   services = {
-    davfs2 = {
-      enable = true;
-      settings = {
-        globalSection = {
-          use_locks = false;
-        };
-        sections = {
-          "${config.users.users.vini.home}/Shared" = {
-            gui_optimize = true;
-          };
-        };
-      };
-    };
     gnome.gnome-keyring.enable = true;
     greetd = {
       enable = true;
@@ -117,23 +94,26 @@
     tailscale.enable = true;
   };
 
-  security.pki.certificates = [
-    ''
-      Dezano CA
-      =========
-      -----BEGIN CERTIFICATE-----
-      MIIBozCCAUmgAwIBAgIQFU/tuiOsb2F49vWfRRbSTzAKBggqhkjOPQQDAjAwMRIw
-      EAYDVQQKEwlEZXphbm8gQ0ExGjAYBgNVBAMTEURlemFubyBDQSBSb290IENBMB4X
-      DTI0MDExNjE5NDk0NFoXDTM0MDExMzE5NDk0NFowMDESMBAGA1UEChMJRGV6YW5v
-      IENBMRowGAYDVQQDExFEZXphbm8gQ0EgUm9vdCBDQTBZMBMGByqGSM49AgEGCCqG
-      SM49AwEHA0IABByStps7Y7U6HuLegnyTQZUtv0IHxMsY0j/5PcGRuL1hcK2sY5/q
-      pm4r2N7NS3AbDiibGlnaG73ahh4a2thEqOmjRTBDMA4GA1UdDwEB/wQEAwIBBjAS
-      BgNVHRMBAf8ECDAGAQH/AgEBMB0GA1UdDgQWBBTNjSNSMvcz3pzGaT7Io3JrBybj
-      qDAKBggqhkjOPQQDAgNIADBFAiBem8NG6ZDnCJOPQ61swQg/u0kvC6FbwX7AueMV
-      1tqSBgIhAO33uLkR17AUD+IkzihnVxCxXYd+3LwbY1+1kUjNujuN
-      -----END CERTIFICATE-----
-    ''
-  ];
+  security = {
+    pam.services.gdm-password.enableGnomeKeyring = true;
+    pki.certificates = [
+      ''
+        Dezano CA
+        =========
+        -----BEGIN CERTIFICATE-----
+        MIIBozCCAUmgAwIBAgIQFU/tuiOsb2F49vWfRRbSTzAKBggqhkjOPQQDAjAwMRIw
+        EAYDVQQKEwlEZXphbm8gQ0ExGjAYBgNVBAMTEURlemFubyBDQSBSb290IENBMB4X
+        DTI0MDExNjE5NDk0NFoXDTM0MDExMzE5NDk0NFowMDESMBAGA1UEChMJRGV6YW5v
+        IENBMRowGAYDVQQDExFEZXphbm8gQ0EgUm9vdCBDQTBZMBMGByqGSM49AgEGCCqG
+        SM49AwEHA0IABByStps7Y7U6HuLegnyTQZUtv0IHxMsY0j/5PcGRuL1hcK2sY5/q
+        pm4r2N7NS3AbDiibGlnaG73ahh4a2thEqOmjRTBDMA4GA1UdDwEB/wQEAwIBBjAS
+        BgNVHRMBAf8ECDAGAQH/AgEBMB0GA1UdDgQWBBTNjSNSMvcz3pzGaT7Io3JrBybj
+        qDAKBggqhkjOPQQDAgNIADBFAiBem8NG6ZDnCJOPQ61swQg/u0kvC6FbwX7AueMV
+        1tqSBgIhAO33uLkR17AUD+IkzihnVxCxXYd+3LwbY1+1kUjNujuN
+        -----END CERTIFICATE-----
+      ''
+    ];
+  };
 
   sops = {
     defaultSopsFile = ../../secrets/default.yaml;

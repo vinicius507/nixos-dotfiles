@@ -5,6 +5,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     nur.url = "github:nix-community/NUR";
     sops-nix.url = "github:Mic92/sops-nix";
@@ -31,17 +35,9 @@
       };
   in {
     packages.${system} = import ./pkgs {inherit outputs pkgs;};
-    overlays = {
-      base = final: prev: {
-        zellij-edit = self.packages.${final.system}.zellij-edit;
-      };
-      hyprland = final: prev: {
-        firefox-vertical-tabs = self.packages.${final.system}.firefox-vertical-tabs;
-        rofi-run = self.packages.${final.system}.rofi-run;
-        wl-screenshot = self.packages.${final.system}.wl-screenshot;
-      };
+    overlays = import ./overlays {
+      inherit outputs;
     };
-    nixosModules = import ./nixos-modules;
     nixosConfigurations = {
       desktop = mkHost {
         modules = [
@@ -55,6 +51,7 @@
       };
     };
     homeManagerModules = import ./hm-modules;
+    homeConfigurations = import ./home;
     devShells.${system}.default = pkgs.mkShell {
       packages = with pkgs; [
         nix

@@ -6,11 +6,16 @@
     inherit (pkgs) writeShellScriptBin;
   };
 
-  wl-screenshot = import ./wl-screenshot.nix {
-    inherit (pkgs) lib grim libnotify slurp wl-clipboard writeShellScriptBin;
+  neovim-config = pkgs.stdenvNoCC.mkDerivation {
+    name = "neovim-config";
+    src = ./neovim-config;
+    dontBuild = true;
+    installPhase = ''
+      cp -r $src $out
+    '';
   };
 
-  zellij-edit = import ./zellij-edit.nix {
-    inherit (pkgs) lib fd gum writeText writeShellScriptBin;
+  wl-screenshot = import ./wl-screenshot.nix {
+    inherit (pkgs) lib grim libnotify slurp wl-clipboard writeShellScriptBin;
   };
 }

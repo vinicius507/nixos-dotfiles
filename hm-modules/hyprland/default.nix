@@ -13,14 +13,13 @@
     ./rofi.nix
     ./waybar.nix
   ];
+
   home.packages = with pkgs; [
-    bitwarden-desktop
     catppuccin-cursors.mochaDark
-    neovide
     wl-clipboard
     xdg-utils
   ];
-  programs.zathura.enable = true;
+
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -84,8 +83,13 @@
         preserve_split = true;
       };
       gestures.workspace_swipe = false;
+      layerrule = [
+        "noanim, rofi"
+      ];
       windowrulev2 = [
         "float,class:^(org.gnome.Nautilus)$"
+        "float,class:^(com.saivert.pwvucontrol)$"
+        "float,class:^(seahorse)$"
         "float,class:^(steam)$,title:^(Friends List)$"
         "float,class:^(virt-manager)$,title:^(Virtual Machine Manager)$"
         "float,title:^(Picture-in-Picture)$"
@@ -135,6 +139,16 @@
         "$mod, mouse_up, workspace, e-1"
         ", Print, exec, ${lib.getExe pkgs.wl-screenshot} section"
         "SHIFT, Print, exec, ${lib.getExe pkgs.wl-screenshot} full"
+      ];
+      bindel = [
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+      ];
+      bindl = [
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ", XF86AudioNext, exec, playerctl next"
+        ", XF86AudioPlay, exec, playerctl play-pause"
+        ", XF86AudioPrev, exec, playerctl previous"
       ];
       bindm = [
         "$mod, mouse:272, movewindow"
