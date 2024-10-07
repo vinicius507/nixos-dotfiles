@@ -24,7 +24,8 @@
     enable = true;
     settings = {
       input = {
-        kb_layout = "br";
+        kb_layout = "us";
+        kb_variant = "intl";
         follow_mouse = 1;
         mouse_refocus = false;
         sensitivity = 0;
