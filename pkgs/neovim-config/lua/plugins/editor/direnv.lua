@@ -1,1 +1,0 @@
-return { "direnv/direnv.vim" }

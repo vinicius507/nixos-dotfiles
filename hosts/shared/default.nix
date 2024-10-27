@@ -66,7 +66,13 @@
     overlays = builtins.attrValues outputs.overlays;
   };
 
-  programs.fish.enable = true;
+  programs = {
+    fish.enable = true;
+    nix-ld = {
+      enable = true;
+      libraries = [pkgs.stdenv.cc.cc];
+    };
+  };
 
   services = {
     gnome.gnome-keyring.enable = true;

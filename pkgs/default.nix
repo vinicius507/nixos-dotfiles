@@ -6,15 +6,6 @@
     inherit (pkgs) writeShellScriptBin;
   };
 
-  neovim-config = pkgs.stdenvNoCC.mkDerivation {
-    name = "neovim-config";
-    src = ./neovim-config;
-    dontBuild = true;
-    installPhase = ''
-      cp -r $src $out
-    '';
-  };
-
   wl-screenshot = import ./wl-screenshot.nix {
     inherit (pkgs) lib grim libnotify slurp wl-clipboard writeShellScriptBin;
   };
