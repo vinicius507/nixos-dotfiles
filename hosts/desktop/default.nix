@@ -55,6 +55,8 @@
       home.packages = with pkgs; [
         beekeeper-studio
         bitwarden-desktop
+        httpie
+        httpie-desktop
         nautilus
         neovide
         obs-studio
