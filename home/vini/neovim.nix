@@ -10,6 +10,7 @@
         gcc
         gnumake
         go
+        sqlfluff
         unzip
       ];
       vimAlias = true;
