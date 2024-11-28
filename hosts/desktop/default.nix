@@ -47,7 +47,7 @@
         };
         services.mpris-proxy.enable = true;
         systemd.user.tmpfiles.rules = [
-          "L %h/Documents/vaults - - - - /sync/Obsidian"
+          "L %h/Documents/Obsidian - - - - /sync/Obsidian"
         ];
       }
     ];
