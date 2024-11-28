@@ -54,9 +54,6 @@
           ignore_opacity = true;
         };
         rounding = 5;
-        drop_shadow = true;
-        shadow_range = 4;
-        shadow_render_power = 3;
       };
       animations = {
         enabled = true;

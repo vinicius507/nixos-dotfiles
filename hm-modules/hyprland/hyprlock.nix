@@ -52,4 +52,5 @@ in {
       ];
     };
   };
+  stylix.targets.hyprlock.enable = false;
 }
