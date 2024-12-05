@@ -10,6 +10,7 @@
         gcc
         gnumake
         go
+        nil
         sqlfluff
         unzip
       ];
